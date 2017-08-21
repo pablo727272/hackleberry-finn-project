@@ -5,8 +5,34 @@ var mongoose    = require('mongoose')
 
 app.use(express.static('./public'))
 
+// home page route
 app.get('/', function(req,res){
     res.sendFile('./html/index.html', {root: './public'})
+})
+
+// food data page route
+app.get('/food-data', function(req,res){
+    res.sendFile('./html/food-data.html', {root: './public'})
+})
+
+// exercise data page route
+app.get('/exercise-data', function(req,res){
+    res.sendFile('./html/exercise-data.html', {root: './public'})
+})
+
+// check progress page route
+app.get('/check-progress', function(req,res){
+    res.sendFile('./html/check-progress.html', {root: './public'})
+})
+
+// about page route
+app.get('/about', function(req,res){
+    res.sendFile('./html/about.html', {root: './public'})
+})
+
+// contact page route
+app.get('/contact', function(req,res){
+    res.sendFile('./html/contact.html', {root: './public'})
 })
 
 mongoose.connect('mongodb://localhost:27017/hackleberryCalorieCounterApp')

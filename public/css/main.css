@@ -15,3 +15,7 @@ h1 {
 img {
     border-radius: 10px;
 }
+
+a, a:hover {
+    color: #00876A;
+}
