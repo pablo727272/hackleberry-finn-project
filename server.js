@@ -11,7 +11,7 @@ app.get('/', function(req,res){
 
 mongoose.connect('mongodb://localhost:27017/hackleberryCalorieCounterApp')
 
-var userInformation = mongoose.Schema({
+var userInformationSchema = mongoose.Schema({
     userId : {
         type        : String,
         required    : true,
@@ -43,7 +43,7 @@ var userInformation = mongoose.Schema({
     }
 })
 
-var dailyDataEntry = mongoose.Schema({
+var dailyDataEntrySchema = mongoose.Schema({
     userId : {
         type        : String,
         required    : true,
