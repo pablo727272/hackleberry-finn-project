@@ -85,5 +85,3 @@ var UserInformation = mongoose.model('userInformation', userInformationSchema, '
 var DailyDataEntry = mongoose.model('dailyDataEntry', dailyDataEntrySchema, 'dailyDataEntry')
 
 app.listen(8080)
-
-paul
