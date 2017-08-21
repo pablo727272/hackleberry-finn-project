@@ -5,7 +5,7 @@
         <!-- vue.js -->
         <script src="https://unpkg.com/vue"></script>
         <meta charset="utf-8"/>
-        <title>Hackleberry Finn | Calorie Counter | 404</title>
+        <title>Hackleberry Finn | Calorie Counter | Exercise Data</title>
         <!-- mobile ready -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- bootstrap css -->
@@ -58,12 +58,57 @@
             <!-- WRAP MAIN SECTION IN CONTAINER START -->
             <div class="container">
 
-                <h2 class="text-center">404</h2>
-                <img src="/images/doe.jpg" class="img-responsive">
-                <br>
-                <h2 class="text-center"><em>These aren't the calories you're looking for...</em></h2>
-                <br>
-                <br>
+                <img src="/images/walking-v2.jpg" class="img-responsive">
+                <h2>Calorie Counter: Exercise Data</h2>
+                <hr>
+
+                <!-- FOOD ITEM AREA START -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- EXERCISE ITEM INPUT FORM START -->
+                        <h3>What kind of exercise or rest?</h3>
+                        <form>
+                            <div class="form-group">
+                                <select class="form-control">
+                                    <option>Running/Jogging</option>
+                                    <option>Treadmill/Elliptical</option>
+                                    <option>Weights</option>
+                                    <option>Walking</option>
+                                    <option>Swimming</option>
+                                    <option>Cycling/Mountain Biking</option>
+                                    <option>Sleep/Nap</option>
+                                </select>
+                                </select>
+                                <h3>What date and time did you do it?</h3>
+                                <input type="date" placeholder="input date">
+                                <input type="time" placeholder="input date">
+                                <h3>Duration?</h3>
+                                <input type="number" placeholder="Hours">
+                                <input type="number" placeholder="Minutes">
+                                <br>
+                                <h3>What was your mood when you did it?</h3>
+                                <select class="form-control">
+                                    <option>Very Happy</option>
+                                    <option>Happy</option>
+                                    <option>Okay</option>
+                                    <option>Unhappy</option>
+                                    <option>Very Unhappy</option>
+                                </select>
+                                <br>
+                                <button type="button" class="btn btn-primary">
+                                    RECORD EXERCISE/REST ITEM
+                                </button>
+                            </div>
+                        </form>
+                        <!-- EXERCISE ITEM INPUT FORM END -->
+                    </div>
+                    <div class="col-md-6">
+                        <img src="/images/cycling-v2.jpg" class="img-responsive">
+                    </div>
+                </div>
+                <!-- FOOD ITEM AREA END -->
+
+                <hr>
 
             </div>
             <!-- WRAP MAIN SECTION IN CONTAINER END -->

@@ -58,26 +58,19 @@
             <!-- WRAP MAIN SECTION IN CONTAINER START -->
             <div class="container">
 
-                <img src="/images/chicken-plate-v3.jpg" class="img-responsive">
+                <img src="/images/chicken-plate-v2.jpg" class="img-responsive">
                 <h1>Calorie Counter</h1>
                 <h4><em>by Hackleberry Finn...</em></h4>
-                <hr>
-                <p>Are you curious about the food you eat and the calories involved? How does the amount of exercise and rest you get affect your caloric intake? With our calorie counter, you can track the foods you eat and drink, the time you consumed them, and even the mood you were in.
-                <br><br>
-                First, tell us a few details about yourself.
-                <br><br>
-                Next, enter some data about the items you consumed in a day.
-                <br><br>
-                When you want to see your progress, hit the "Check My Progress" button.</p>
+                <p><br>Are you curious about the food you eat and the calories involved? Do you worry that you are eating too much, or aren't eating enough, to meet your goals? How does the amount of exercise and rest you get affect your caloric intake? With our calorie counter, you can track the foods you eat and drink, the time you consumed them, and even the mood you were in. First, tell us a few details about yourself and the weight you want to lose or gain to determine your calorie goal. Next, enter the items you consumed in a day. When you want to see your progress, hit the "Check My Progress" button.</p><br>
 
                 <hr>
 
                 <!-- USER DATA AREA START -->
-                <div class="row">
+                <div class="row" id="signup">
                     <div class="col-md-6">
                         <!-- USER DATA INPUT FORM START -->
                         <h3>Please tell us a little about yourself...</h3>
-                        <form id="signup">
+                        <form>
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Desired User ID">
                                 <br>
@@ -125,12 +118,75 @@
 
                 <hr>
 
+                <!-- CHECK PROGRESS AREA START -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>How are you doing this week?</h3>
+                        <button type="button" class="btn btn-primary">
+                            CHECK MY PROGRESS
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="/images/running-shoes-v2.jpg" class="img-responsive">
+                    </div>
+                </div>
+                <!-- CHECK PROGRESS AREA END -->
+
+                <hr>
+
+                <!-- EXAMPLE GRAPH AREA START -->
+                <!-- <div class="row">
+                    <div class="col-md-12">
+                        <canvas id="myChart" width="400" height="400"></canvas>
+                        <script>
+                        console.log('graph area loaded');
+                        var ctx = document.getElementById("myChart").getContext('2d');
+                        var myChart = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                                datasets: [{
+                                    label: '# of Votes',
+                                    data: [12, 19, 3, 5, 2, 3],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(75, 192, 192, 0.2)',
+                                        'rgba(153, 102, 255, 0.2)',
+                                        'rgba(255, 159, 64, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255,99,132,1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero:true
+                                        }
+                                    }]
+                                }
+                            }
+                        });
+                        </script>
+                    </div>
+                </div> -->
+                <!-- EXAMPLE GRAPH AREA END -->
+
             </div>
             <!-- WRAP MAIN SECTION IN CONTAINER END -->
 
             <!-- FOOTER START -->
             <footer class="container-fluid">
-                <p class="text-center"><small><a href="/">Home</a> | <a href="/food-data">Food Data</a> | <a href="/exercise-data">Exercise Data</a> | <a href="/check-progress">Check Progress</a> | <a href="/about">About</a> | <a href="/contact">Contact</a></small></p>
                 <p class="text-center"><small>Copyright &copy; Hackleberry Finn. All rights reserved.</small></p>
                 <br>
             </footer>
