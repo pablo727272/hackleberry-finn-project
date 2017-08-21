@@ -1,12 +1,12 @@
 {
   "name": "hackathon-170818",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "CodeCraft School Hackathon Project",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Paul Humphrey, Joe Fan, Eric Price",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",

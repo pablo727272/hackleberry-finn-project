@@ -1,5 +1,3 @@
-<!-- BOILERPLATE FOR PAUL HUMPHREY .html FILES -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,68 +12,47 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <!-- google fonts -->
         <link href="https://fonts.googleapis.com/css?family=Lora|Shrikhand" rel="stylesheet">
-        <!-- my css -->
+        <!-- custom css -->
         <link rel="stylesheet" href="/css/main.css">
+        <!-- jQuery js -->
+        <script
+        src="http://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
     </head>
 
     <body>
+
         <div id="app"> <!-- begin vue app -->
             <!-- all vue directives start with 'v-', to make them easier to identify -->
 
             <!-- NAVBAR START -->
-            <nav class="navbar navbar-default">
-              <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-                  <a class="navbar-brand" href="#">Brand</a>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                  <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Search">
+            <nav class="navbar navbar-default"><!-- open navbar -->
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html"><img src="favicon.ico"></a>
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                  </form>
-                  <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div><!-- /.navbar-collapse -->
-              </div><!-- /.container-fluid -->
-            </nav>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Food Data</a></li>
+                            <li><a href="#">Exercise Data</a></li>
+                            <li><a href="#">Check Progress</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav><!-- close navbar -->
             <!-- NAVBAR END -->
 
             <!-- WRAP MAIN SECTION IN CONTAINER START -->
@@ -94,40 +71,44 @@
                     <div class="col-md-6">
                         <!-- USER DATA INPUT FORM START -->
                         <h3>Please tell us a little about yourself...</h3>
-                        <input type="text" class="form-control" placeholder="Desired User ID">
-                        <br>
-                        <input type="text" class="form-control" placeholder="First name">
-                        <br>
-                        <input type="text" class="form-control" placeholder="Last name">
-                        <br>
-                        Gender:
-                        <select class="form-control">
-                            <option>Male</option>
-                            <option>Female</option>
-                        </select>
-                        <br>
-                        <input type="number" class="form-control" placeholder="Age">
-                        <br>
-                        <input type="number" class="form-control" placeholder="Weight in lbs">
-                        <br>
-                        <input type="number" class="form-control" placeholder="Height in inches">
-                        <!-- <br>
-                        Weight Loss Goal:
-                        <select class="form-control">
-                            <option>Lose 2 lbs per week</option>
-                            <option>Lose 1.5 lbs per week</option>
-                            <option>Lose 1 lbs per week</option>
-                            <option>Lose 0.5 lbs per week</option>
-                            <option>Maintain my current weight</option>
-                            <option>Gain 0.5 lbs per week</option>
-                            <option>Gain 1 lbs per week</option>
-                            <option>Gain 1.5 lbs per week</option>
-                            <option>Gain 2 lbs per week</option>
-                        </select> -->
-                        <br>
-                        <button type="button" class="btn btn-primary">
-                            SIGN ME UP!
-                        </button>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Desired User ID">
+                                <br>
+                                <input type="text" class="form-control" placeholder="First name">
+                                <br>
+                                <input type="text" class="form-control" placeholder="Last name">
+                                <br>
+                                Gender:
+                                <select class="form-control">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+                                <br>
+                                <input type="number" class="form-control" placeholder="Age">
+                                <br>
+                                <input type="number" class="form-control" placeholder="Weight in lbs">
+                                <br>
+                                <input type="number" class="form-control" placeholder="Height in inches">
+                                <!-- <br>
+                                Weight Loss Goal:
+                                <select class="form-control">
+                                    <option>Lose 2 lbs per week</option>
+                                    <option>Lose 1.5 lbs per week</option>
+                                    <option>Lose 1 lbs per week</option>
+                                    <option>Lose 0.5 lbs per week</option>
+                                    <option>Maintain my current weight</option>
+                                    <option>Gain 0.5 lbs per week</option>
+                                    <option>Gain 1 lbs per week</option>
+                                    <option>Gain 1.5 lbs per week</option>
+                                    <option>Gain 2 lbs per week</option>
+                                </select> -->
+                                <br>
+                                <button type="button" class="btn btn-primary">
+                                    SIGN ME UP!
+                                </button>
+                            </div>
+                        </form>
                         <!-- USER DATA INPUT FORM END -->
                     </div>
                     <div class="col-md-6">
@@ -146,22 +127,26 @@
                     <div class="col-md-6">
                         <!-- FOOD ITEM INPUT FORM START -->
                         <h3>What did you consume?</h3>
-                        <input type="text" class="form-control" placeholder="Food/Drink item">
-                        <h3>What time did you consume it?</h3>
-                        <input type="datetime" class="form-control">
-                        <br>
-                        <h3>What was your mood when you consumed it?</h3>
-                        <select class="form-control" placeholder="Gender">
-                            <option>Very Happy</option>
-                            <option>Happy</option>
-                            <option>Meh</option>
-                            <option>Unhappy</option>
-                            <option>Very Unhappy</option>
-                        </select>
-                        <br>
-                        <button type="button" class="btn btn-primary">
-                            RECORD FOOD ITEM
-                        </button>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Food/Drink item">
+                                <h3>What time did you consume it?</h3>
+                                <input type="datetime" class="form-control" placeholder="input date">
+                                <br>
+                                <h3>What was your mood when you consumed it?</h3>
+                                <select class="form-control" placeholder="Gender">
+                                    <option>Very Happy</option>
+                                    <option>Happy</option>
+                                    <option>Meh</option>
+                                    <option>Unhappy</option>
+                                    <option>Very Unhappy</option>
+                                </select>
+                                <br>
+                                <button type="button" class="btn btn-primary">
+                                    RECORD FOOD ITEM
+                                </button>
+                            </div>
+                        </form>
                         <!-- FOOD ITEM INPUT FORM END -->
                     </div>
                 </div>
@@ -236,8 +221,6 @@
             </div>
             <!-- WRAP MAIN SECTION IN CONTAINER END -->
 
-
-
             <!-- FOOTER START -->
             <footer class="container-fluid">
                 <p class="text-center"><small>Copyright &copy; Hackleberry Finn. All rights reserved.</small></p>
@@ -246,14 +229,11 @@
             <!-- FOOTER END -->
 
         </div> <!-- end vue app -->
-        <!-- jQuery js -->
-        <script
-        src="http://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
+
+
         <!-- bootstrap js -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <!-- my js -->
+        <!-- custom js -->
         <!-- <script src="/Chart.js"></script> -->
         <script src="/js/main.js"></script>
     </body>
