@@ -35,6 +35,11 @@ app.get('/contact', function(req,res){
     res.sendFile('./html/contact.html', {root: './public'})
 })
 
+// api test area route
+app.get('/api-test', function(req,res){
+    res.sendFile('./html/api-test.html', {root: './public'})
+})
+
 mongoose.connect('mongodb://localhost:27017/hackleberryCalorieCounterApp')
 
 var userInformationSchema = mongoose.Schema({
