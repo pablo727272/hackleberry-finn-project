@@ -1,0 +1,260 @@
+<!-- BOILERPLATE FOR PAUL HUMPHREY .html FILES -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- vue.js -->
+        <script src="https://unpkg.com/vue"></script>
+        <meta charset="utf-8"/>
+        <title>Hackleberry Finn | Calorie Counter</title>
+        <!-- mobile ready -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- bootstrap css -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- google fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lora|Shrikhand" rel="stylesheet">
+        <!-- my css -->
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+
+    <body>
+        <div id="app"> <!-- begin vue app -->
+            <!-- all vue directives start with 'v-', to make them easier to identify -->
+
+            <!-- NAVBAR START -->
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#">Brand</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                  </form>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+            <!-- NAVBAR END -->
+
+            <!-- WRAP MAIN SECTION IN CONTAINER START -->
+            <div class="container">
+
+                <img src="/images/chicken-plate-v2.jpg" class="img-responsive">
+                <h1>Calorie Counter</h1>
+                <h4><em>by Hackleberry Finn...</em></h4>
+                <p class="lead">How it works:
+                <br>Are you curious about the food you eat and the calories involved? Do you worry that you are eating too much, or aren't eating enough, to meet your goals? How does the amount of exercise and rest you get affect your caloric intake? With our calorie counter, you can track the foods you eat and drink, the time you consumed them, and even the mood you were in. First, tell us a few details about yourself and the weight you want to lose or gain to determine your calorie goal. Next, enter the items you consumed in a day. When you want to see your progress, hit the "Check My Progress" button.</p>
+
+                <hr>
+
+
+                <!-- USER DATA AREA START -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- USER DATA INPUT FORM START -->
+                        <h3>Please tell us a little about yourself...</h3>
+                        <input type="text" class="form-control" placeholder="First name">
+                        <br>
+                        <input type="text" class="form-control" placeholder="Last name">
+                        <br>
+                        Gender:
+                        <select class="form-control">
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                        <br>
+                        <input type="number" class="form-control" placeholder="Age">
+                        <br>
+                        <input type="number" class="form-control" placeholder="Weight in lbs">
+                        <br>
+                        <input type="number" class="form-control" placeholder="Height in inches">
+                        <br>
+                        Weight Loss Goal:
+                        <select class="form-control">
+                            <option>Lose 2 lbs per week</option>
+                            <option>Lose 1.5 lbs per week</option>
+                            <option>Lose 1 lbs per week</option>
+                            <option>Lose 0.5 lbs per week</option>
+                            <option>Maintain my current weight</option>
+                            <option>Gain 0.5 lbs per week</option>
+                            <option>Gain 1 lbs per week</option>
+                            <option>Gain 1.5 lbs per week</option>
+                            <option>Gain 2 lbs per week</option>
+                        </select>
+                        <br>
+                        <button type="button" class="btn btn-primary">
+                            GET MY CALORIE GOAL
+                        </button>
+                        <!-- USER DATA INPUT FORM END -->
+                    </div>
+                    <div class="col-md-6">
+                        <img src="/images/yoga-sunrise-v2.jpg" class="img-responsive">
+                    </div>
+                </div>
+                <!-- USER DATA AREA END -->
+
+                <hr>
+
+                <!-- FOOD ITEM AREA START -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="/images/food-on-board-v2.jpg" class="img-responsive">
+                    </div>
+                    <div class="col-md-6">
+                        <!-- FOOD ITEM INPUT FORM START -->
+                        <h3>What did you consume?</h3>
+                        <input type="text" class="form-control" placeholder="Food/Drink item">
+                        <h3>What time did you consume it?</h3>
+                        <input type="datetime" class="form-control" placeholder="Time">
+                        <br>
+                        <h3>What was your mood when you consumed it?</h3>
+                        <select class="form-control" placeholder="Gender">
+                            <option>Very Happy</option>
+                            <option>Happy</option>
+                            <option>Meh</option>
+                            <option>Unhappy</option>
+                            <option>Very Unhappy</option>
+                        </select>
+                        <br>
+                        <button type="button" class="btn btn-primary">
+                            RECORD FOOD ITEM
+                        </button>
+                        <!-- FOOD ITEM INPUT FORM END -->
+                    </div>
+                </div>
+                <!-- FOOD ITEM AREA END -->
+
+                <hr>
+
+                <!-- CHECK PROGRESS AREA START -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>How are you doing this week?</h3>
+                        <button type="button" class="btn btn-primary">
+                            CHECK MY PROGRESS
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="/images/running-shoes-v2.jpg" class="img-responsive">
+                    </div>
+                </div>
+                <!-- CHECK PROGRESS AREA END -->
+
+                <hr>
+
+                <!-- EXAMPLE GRAPH AREA START -->
+                <!-- <div class="row">
+                    <div class="col-md-12">
+                        <canvas id="myChart" width="400" height="400"></canvas>
+                        <script>
+                        console.log('graph area loaded');
+                        var ctx = document.getElementById("myChart").getContext('2d');
+                        var myChart = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                                datasets: [{
+                                    label: '# of Votes',
+                                    data: [12, 19, 3, 5, 2, 3],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(75, 192, 192, 0.2)',
+                                        'rgba(153, 102, 255, 0.2)',
+                                        'rgba(255, 159, 64, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255,99,132,1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero:true
+                                        }
+                                    }]
+                                }
+                            }
+                        });
+                        </script>
+                    </div>
+                </div> -->
+                <!-- EXAMPLE GRAPH AREA END -->
+
+            </div>
+            <!-- WRAP MAIN SECTION IN CONTAINER END -->
+
+
+
+            <!-- FOOTER START -->
+            <footer class="container-fluid">
+                <p class="text-center"><small>Copyright &copy; Hackleberry Finn. All rights reserved.</small></p>
+                <br>
+            </footer>
+            <!-- FOOTER END -->
+
+        </div> <!-- end vue app -->
+        <!-- jQuery js -->
+        <script
+        src="http://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+        <!-- bootstrap js -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!-- my js -->
+        <!-- <script src="/Chart.js"></script> -->
+        <script src="/js/main.js"></script>
+    </body>
+
+</html>

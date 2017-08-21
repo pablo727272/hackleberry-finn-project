@@ -1,0 +1,19 @@
+/*BOILERPLATE FOR PAUL HUMPHREY .css FILES*/
+
+body {
+    background-color: #C6D490;
+    font-family: 'Lora', serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Shrikhand', cursive;
+    color: #A84322;
+}
+
+h1 {
+    font-size: 3.5em;
+}
+
+img {
+    border-radius: 10px;
+}
