@@ -27,8 +27,7 @@
 
     <body>
 
-        <div id="app"> <!-- begin vue app -->
-            <!-- all vue directives start with 'v-', to make them easier to identify -->
+        <div id="appActivity"> <!-- begin vue app -->
 
             <!-- NAVBAR START -->
             <nav class="navbar navbar-default"><!-- open navbar -->
@@ -73,14 +72,14 @@
                         <h3>What kind of exercise or rest?</h3>
                         <form v-on:submit="createActivity">
                             <div class="form-group">
-                                <select class="form-control">
-                                    <option v-model="adActivityName">Running/Jogging</option>
+                                <select v-model="adActivityName" class="form-control">
+                                    <option>Running/Jogging</option>
                                     <!-- <option>Treadmill/Elliptical</option> -->
-                                    <option v-model="adActivityName">Weightlifting</option>
-                                    <option v-model="adActivityName">Walking</option>
+                                    <option>Weightlifting</option>
+                                    <option>Walking</option>
                                     <!-- <option>Swimming</option> -->
-                                    <option v-model="adActivityName">Cycling/Mountain Biking</option>
-                                    <option v-model="adActivityName">Sleeping/Napping</option>
+                                    <option>Cycling/Mountain Biking</option>
+                                    <option>Sleeping/Napping</option>
                                 </select>
                                 <h3>When did you do it?</h3>
                                 <div class="row">
@@ -101,15 +100,15 @@
                                     </div>
                                 </div>
                                 <h3>What was your mood like?</h3>
-                                <select class="form-control">
-                                    <option v-model="adMood">Very Happy</option>
-                                    <option v-model="adMood">Happy</option>
-                                    <option v-model="adMood">Okay</option>
-                                    <option v-model="adMood">Unhappy</option>
-                                    <option v-model="adMood">Very Unhappy</option>
+                                <select v-model="adMood" class="form-control">
+                                    <option>Very Happy</option>
+                                    <option>Happy</option>
+                                    <option>Okay</option>
+                                    <option>Unhappy</option>
+                                    <option>Very Unhappy</option>
                                 </select>
                                 <br><br>
-                                <button type="button" class="form-control btn btn-primary">
+                                <button type="submit" class="form-control btn btn-primary">
                                     RECORD EXERCISE/REST ITEM
                                 </button>
                             </div>
@@ -136,6 +135,9 @@
             <!-- FOOTER END -->
 
         </div> <!-- end vue app -->
+
+        <!-- activity item js - vue.js files go down here-->
+        <script src="/js/activity.js"></script>
 
     </body>
 

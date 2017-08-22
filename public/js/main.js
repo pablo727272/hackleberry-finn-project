@@ -56,7 +56,7 @@ function getUserDocument(){
   // get user based on FaceBook User ID
 }
 function buildProfileInput(user){
-  
+
   let userInputForm = `
   <form>
   <div class="form-group">
