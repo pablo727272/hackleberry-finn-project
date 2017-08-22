@@ -3,7 +3,8 @@ var app         = express()
 var bodyParser  = require('body-parser')
 
 var UserInformationModel = require('./db')
-var DailyDataEntryModel = require('./db')
+var FoodDataEntryModel = require('./db')
+var ActivityDataEntryModel = require('./db')
 app.use(express.static('./public'))
 
 // API Routes
@@ -67,15 +68,15 @@ app.get('/api-test', function(req,res){
 
 // 404 page
 app.get('/404', function(req,res){
-  res.sendFile('./html/404.html', {root: './public'})
+    res.sendFile('./html/404.html', {root: './public'})
 })
 
 //////////// HTML Routes end //////////////////
 
 // 404 error handling middleware
 app.use(function(req, res, next){
-  res.status(404)
-  res.redirect('/404')
+    res.status(404)
+    res.redirect('/404')
 })
 
 // if we call `next(err)` in our code above, it'll jump us down to right here.

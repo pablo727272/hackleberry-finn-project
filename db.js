@@ -29,46 +29,64 @@ var userInformationSchema = mongoose.Schema({
     }
 })
 
-var dailyDataEntrySchema = mongoose.Schema({
+var foodDataEntrySchema = mongoose.Schema({
     userId : {
         type        : Number,
         required    : true,
         unique      : true
     },
-    ddeTimeStamp : {
+    fdEntryDate : {
+        type        : Date,
+        required    : true
+    },
+    fdEntryTime : {
+        type        : String,
+        required    : true
+    },
+    fdMood : {
+        type        : String
+    },
+    fdFoodName : {
+        type        : String
+    },
+    fdFoodQuantity : {
+        type        : Number
+    },
+    fdFoodCalories : {
+        type        : Number
+    },
+})
+
+var activityDataEntrySchema = mongoose.Schema({
+    userId : {
+        type        : Number,
+        required    : true,
+        unique      : true
+    },
+    adTimeStamp : {
         type        : Date,
         required    : true,
         unique      : true
     },
-    ddeEntryDate : {
+    adEntryDate : {
         type        : Date,
         required    : true
     },
-    ddeMood : {
+    adMood : {
         type        : String
     },
-    ddeFoodName : {
+    adActivityName : {
         type        : String
     },
-    ddeFoodQuantity : {
+    adActivityAmount : {
         type        : Number
     },
-    ddeFoodCalories : {
-        type        : Number
-    },
-    ddeActiviyName : {
-        type        : String
-    },
-    ddeActivityAmount : {
-        type        : Number
-    },
-    ddeSleepAmount : {
-        type        : Number
-    }
 })
 
 var UserInformationModel = mongoose.model('userInformation', userInformationSchema, 'userInformation')
-var DailyDataEntryModel = mongoose.model('dailyDataEntry', dailyDataEntrySchema, 'dailyDataEntry')
+var FoodDataEntryModel = mongoose.model('foodDataEntry', foodDataEntrySchema, 'foodDataEntry')
+var AtivityDataEntryModel = mongoose.model('activityDataEntry', activityDataEntrySchema, 'activityDataEntry')
 
 module.exports = UserInformationModel
-module.exports = DailyDataEntryModel
+module.exports = FoodDataEntryModel
+module.exports = ActivityDataEntryModel
