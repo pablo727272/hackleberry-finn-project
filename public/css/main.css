@@ -20,10 +20,14 @@ a, a:hover {
     color: #00876A;
 }
 
-#fb-btn{
+#fb-btn {
     margin-top: 15px;
 }
 
-#profile{
+#profile {
+    display: none;
+}
+
+#logout {
     display: none;
 }
