@@ -6,6 +6,16 @@ var UserInformationModel = require('./db')
 var DailyDataEntryModel = require('./db')
 app.use(express.static('./public'))
 
+// API Routes
+// Create User Information Doc
+app.post('/userInformation', function(req,res){
+    var newUserInfo = new UserInformationModel({
+        userId : req.
+    })
+})
+
+//////////// API Routes end //////////////////
+// These routes send HTML to clients
 // home page route
 app.get('/', function(req,res){
     res.sendFile('./html/index.html', {root: './public'})
@@ -51,5 +61,6 @@ app.use(function(req, res, next){
   res.status(404)
   res.redirect('/404')
 })
+//////////// HTML Routes end //////////////////
 
 app.listen(8080)

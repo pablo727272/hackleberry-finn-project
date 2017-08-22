@@ -3,7 +3,7 @@ mongoose.connect('mongodb://localhost:27017/hackleberryCalorieCounterApp')
 
 var userInformationSchema = mongoose.Schema({
     userId : {
-        type        : String,
+        type        : Number,
         required    : true,
         unique      : true
     },
@@ -31,7 +31,7 @@ var userInformationSchema = mongoose.Schema({
 
 var dailyDataEntrySchema = mongoose.Schema({
     userId : {
-        type        : String,
+        type        : Number,
         required    : true,
         unique      : true
     },
