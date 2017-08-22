@@ -58,6 +58,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Facebook Login  -->
+                        <li><a href="#" onclick="logout()">Logout</a></li>
                         <fb:login-button 
                             id="fb-btn"
                             scope="public_profile,email" 
@@ -72,6 +73,11 @@
         </nav>
         <!-- close navbar -->
         <!-- NAVBAR END -->
+
+        <div class="container">
+            <hr id="heading">Log in to view your profile</h3>
+            <div id="profile"></div>
+        </div>
 
         <!-- WRAP MAIN SECTION IN CONTAINER START -->
         <div class="container">
