@@ -63,13 +63,12 @@ var activityDataEntrySchema = mongoose.Schema({
         required    : true,
         unique      : true
     },
-    adTimeStamp : {
-        type        : Date,
-        required    : true,
-        unique      : true
-    },
     adEntryDate : {
         type        : Date,
+        required    : true
+    },
+    adEntryTime : {
+        type        : String,
         required    : true
     },
     adMood : {

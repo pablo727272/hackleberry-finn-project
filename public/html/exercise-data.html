@@ -71,21 +71,21 @@
                     <div class="col-md-6">
                         <!-- EXERCISE ITEM INPUT FORM START -->
                         <h3>What kind of exercise or rest?</h3>
-                        <form>
+                        <form v-on:submit="createActivity">
                             <div class="form-group">
                                 <select class="form-control">
-                                    <option>Running/Jogging</option>
+                                    <option v-model="activityRunning">Running/Jogging</option>
                                     <!-- <option>Treadmill/Elliptical</option> -->
-                                    <option>Weightlifting</option>
-                                    <option>Walking</option>
+                                    <option v-model="activityWeightlifting">Weightlifting</option>
+                                    <option v-model="activityWalking">Walking</option>
                                     <!-- <option>Swimming</option> -->
-                                    <option>Cycling/Mountain Biking</option>
-                                    <option>Sleeping/Napping</option>
+                                    <option v-model="activityCycling">Cycling/Mountain Biking</option>
+                                    <option v-model="activitySleeping">Sleeping/Napping</option>
                                 </select>
                                 <h3>When did you do it?</h3>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <input type="date" class="form-control">
+                                        <input v-model="activityDate" type="date" class="form-control">
                                     </div>
                                     <div class="col-md-6">
                                         <input type="time" class="form-control">
