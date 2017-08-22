@@ -77,14 +77,17 @@ var activityDataEntrySchema = mongoose.Schema({
     adActivityName : {
         type        : String
     },
-    adActivityAmount : {
+    adActivityAmountHours : {
+        type        : Number
+    },
+    adActivityAmountMinutes : {
         type        : Number
     },
 })
 
 var UserInformationModel = mongoose.model('userInformation', userInformationSchema, 'userInformation')
 var FoodDataEntryModel = mongoose.model('foodDataEntry', foodDataEntrySchema, 'foodDataEntry')
-var AtivityDataEntryModel = mongoose.model('activityDataEntry', activityDataEntrySchema, 'activityDataEntry')
+var ActivityDataEntryModel = mongoose.model('activityDataEntry', activityDataEntrySchema, 'activityDataEntry')
 
 module.exports = UserInformationModel
 module.exports = FoodDataEntryModel

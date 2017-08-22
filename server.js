@@ -9,25 +9,25 @@ app.use(express.static('./public'))
 
 // API Routes
 // Create User Information Doc
-app.post('/userInformation', function(req,res){
-    var newUserInfo = new UserInformationModel({
-        userId : req.
-    })
-})
-
-// CRUD database processes
-// (C)reate exercise/rest items
-app.post('/todo', function(req, res){
-    var newTodo = new TodoModel({
-        text: req.body.todoText
-    })
-    newTodo.save(function(err){
-        if (err) { next(err) }
-        else {
-            res.send({success:'success!'})
-        }
-    })
-})
+// app.post('/userInformation', function(req,res){
+//     var newUserInfo = new UserInformationModel({
+//         userId : req.
+//     })
+// })
+//
+// // CRUD database processes
+// // (C)reate exercise/rest items
+// app.post('/todo', function(req, res){
+//     var newTodo = new TodoModel({
+//         text: req.body.todoText
+//     })
+//     newTodo.save(function(err){
+//         if (err) { next(err) }
+//         else {
+//             res.send({success:'success!'})
+//         }
+//     })
+// })
 
 //////////// API Routes end //////////////////
 // These routes send HTML to clients

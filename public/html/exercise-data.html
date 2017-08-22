@@ -74,39 +74,39 @@
                         <form v-on:submit="createActivity">
                             <div class="form-group">
                                 <select class="form-control">
-                                    <option v-model="activityRunning">Running/Jogging</option>
+                                    <option v-model="adActivityName">Running/Jogging</option>
                                     <!-- <option>Treadmill/Elliptical</option> -->
-                                    <option v-model="activityWeightlifting">Weightlifting</option>
-                                    <option v-model="activityWalking">Walking</option>
+                                    <option v-model="adActivityName">Weightlifting</option>
+                                    <option v-model="adActivityName">Walking</option>
                                     <!-- <option>Swimming</option> -->
-                                    <option v-model="activityCycling">Cycling/Mountain Biking</option>
-                                    <option v-model="activitySleeping">Sleeping/Napping</option>
+                                    <option v-model="adActivityName">Cycling/Mountain Biking</option>
+                                    <option v-model="adActivityName">Sleeping/Napping</option>
                                 </select>
                                 <h3>When did you do it?</h3>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <input v-model="activityDate" type="date" class="form-control">
+                                        <input v-model="adEntryDate" type="date" class="form-control">
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="time" class="form-control">
+                                        <input v-model="adEntryTime" type="time" class="form-control">
                                     </div>
                                 </div>
                                 <h3>Duration?</h3>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <input type="number" min="1" class="form-control" placeholder="Hours">
+                                        <input v-model="adActivityAmountHours" type="number" min="1" class="form-control" placeholder="Hours">
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="number" min="1" class="form-control" placeholder="Minutes">
+                                        <input v-model="adActivityAmountMinutes" type="number" min="1" class="form-control" placeholder="Minutes">
                                     </div>
                                 </div>
                                 <h3>What was your mood like?</h3>
                                 <select class="form-control">
-                                    <option>Very Happy</option>
-                                    <option>Happy</option>
-                                    <option>Okay</option>
-                                    <option>Unhappy</option>
-                                    <option>Very Unhappy</option>
+                                    <option v-model="adMood">Very Happy</option>
+                                    <option v-model="adMood">Happy</option>
+                                    <option v-model="adMood">Okay</option>
+                                    <option v-model="adMood">Unhappy</option>
+                                    <option v-model="adMood">Very Unhappy</option>
                                 </select>
                                 <br><br>
                                 <button type="button" class="form-control btn btn-primary">
