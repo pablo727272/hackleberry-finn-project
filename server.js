@@ -48,11 +48,7 @@ var userInformationSchema = mongoose.Schema({
         required    : true,
         unique      : true
     },
-    uiFirstName : {
-        type        : String,
-        required    : true
-    },
-    uiLastName : {
+    uiName : {
         type        : String,
         required    : true
     },
