@@ -8,6 +8,7 @@ function getResult(userInput) {
         'fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat&appId=dff4dd40&appKey=851aa2974e40e7c1871e8f6552ad99d6',
         success: function(d) {
           storedSearchItem = d.hits;
+          //hits are the individual food items in the JSON obj from the API call
           storedSearchItem.map(function(item) {
             //.map takes every value within SearchItem and passes it into the storedSearchItem function
             var x = item.fields
