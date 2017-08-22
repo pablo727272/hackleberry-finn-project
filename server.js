@@ -14,6 +14,20 @@ app.post('/userInformation', function(req,res){
     })
 })
 
+// CRUD database processes
+// (C)reate exercise/rest items
+app.post('/todo', function(req, res){
+    var newTodo = new TodoModel({
+        text: req.body.todoText
+    })
+    newTodo.save(function(err){
+        if (err) { next(err) }
+        else {
+            res.send({success:'success!'})
+        }
+    })
+})
+
 //////////// API Routes end //////////////////
 // These routes send HTML to clients
 // home page route
@@ -56,26 +70,13 @@ app.get('/404', function(req,res){
   res.sendFile('./html/404.html', {root: './public'})
 })
 
-// CRUD database processes
-// (C)reate exercise/rest items
-app.post('/todo', function(req, res){
-    var newTodo = new TodoModel({
-        text: req.body.todoText
-    })
-    newTodo.save(function(err){
-        if (err) { next(err) }
-        else {
-            res.send({success:'success!'})
-        }
-    })
-})
+//////////// HTML Routes end //////////////////
 
 // 404 error handling middleware
 app.use(function(req, res, next){
   res.status(404)
   res.redirect('/404')
 })
-//////////// HTML Routes end //////////////////
 
 // if we call `next(err)` in our code above, it'll jump us down to right here.
 app.use(function(err, req, res, next){
