@@ -22,8 +22,10 @@ window.fbAsyncInit = function () {
 function statusChangeCallback(response) {
   if (response.status === 'connected') {
     console.log('Logged in and authenticated');
+    setElements(true);
   } else {
     console.log('Not authenticated');
+    setElements(false);
   }
 }
 
@@ -31,4 +33,14 @@ function checkLoginState() {
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
   });
+}
+
+function setElements(isLoggedIn){
+  if(isLoggedIn){
+    document.getElementById('profile').style.display = 'block';
+    document.getElementById('fb-btn').style.display = 'none';
+  } else {
+    document.getElementById('profile').style.display = 'none';
+    document.getElementById('fb-btn').style.display = 'block';
+  }
 }
