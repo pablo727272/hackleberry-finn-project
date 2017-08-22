@@ -22,6 +22,11 @@ a, a:hover {
 
 #fb-btn {
     margin-top: 15px;
+    margin-right: 40px;
+}
+
+#logout {
+    margin-right: 40px;
 }
 
 #profile {
@@ -31,3 +36,7 @@ a, a:hover {
 #logout {
     display: none;
 }
+
+/* #user-input-area {
+    display: none;
+} */
