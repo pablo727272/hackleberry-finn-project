@@ -59,9 +59,9 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Facebook Login  -->
                         <li><a id="logout" href="#" onclick="logout()">Logout</a></li>
-                        <fb:login-button 
+                        <fb:login-button
                             id="fb-btn"
-                            scope="public_profile,email" 
+                            scope="public_profile,email"
                             onlogin="checkLoginState();">
                         </fb:login-button>
                         <!-- Facebook Login  -->
@@ -99,15 +99,10 @@
             <div class="row">
                 <div class="col-md-6">
                     <!-- USER DATA INPUT FORM START -->
-                    <h3>Please tell us a little about yourself...</h3>
                     <form id="signup">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Desired User ID">
-                            <br>
-                            <input type="text" class="form-control" placeholder="First name">
-                            <br>
-                            <input type="text" class="form-control" placeholder="Last name">
-                            <br> Gender:
+                            <h3>Please tell us a little about yourself...</h3>
+                            Gender:
                             <select class="form-control">
                                     <option>Male</option>
                                     <option>Female</option>
