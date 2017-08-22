@@ -22,9 +22,7 @@
         <!-- bootstrap js -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <!-- chart.js cdn -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-        <!-- chart js -->
-        <script src="/js/chart.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
         <!-- custom js -->
         <script src="/js/main.js"></script>
     </head>
@@ -88,9 +86,9 @@
 
                 <p>graph area here??  OR does the graph data fill different areas and auto-load when this page loads? e.g. calories consumed over 1 week...  calories burned over 1 week...  per day... by food type, exercise/rest type etc?</p>
 
-                <!-- EXAMPLE GRAPH AREA START -->
-                <canvas id="myChart"></canvas>
-                <!-- EXAMPLE GRAPH AREA END -->
+                <!-- EXAMPLE LINE GRAPH AREA START -->
+                <canvas id="line-chart"></canvas>
+                <!-- EXAMPLE LINE GRAPH AREA END -->
 
                 <hr>
 
@@ -106,6 +104,9 @@
             <!-- FOOTER END -->
 
         </div> <!-- end vue app -->
+
+        <!-- chart js - load this last! -->
+        <script src="/js/chart.js"></script>
     </body>
 
 </html>
