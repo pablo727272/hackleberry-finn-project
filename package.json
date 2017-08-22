@@ -4,7 +4,8 @@
   "description": "CodeCraft School Hackathon Project",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Paul Humphrey, Joe Fan, Eric Price",
   "license": "ISC",
@@ -13,5 +14,13 @@
     "express": "^4.15.4",
     "mongodb": "^2.2.31",
     "mongoose": "^4.11.7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pablo727272/hackleberry-finn-project"
+  },
+  "bugs": {
+    "url": "https://github.com/pablo727272/hackleberry-finn-project/issues"
+  },
+  "homepage": "https://github.com/pablo727272/hackleberry-finn-project"
 }
