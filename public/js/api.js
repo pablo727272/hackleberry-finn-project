@@ -12,12 +12,14 @@ function getResult(userInput) {
           storedSearchItem.map(function(item) {
             //.map takes every value within SearchItem and passes it into the storedSearchItem function
             var x = item.fields
+
+
             $('.resultContainer').append(
               '<div class="itemBar">' +
-                '<h2>' + x.item_name + '<h2>' +
-                '<h3>Calories: ' + x.nf_calories + '<h3>' +
-                '<h3>Serving Size: ' + x.nf_serving_size_qty + ' ' + x.nf_serving_size_unit + '<h3>' +
-                '<h3>Total Fat: ' + x.nf_total_fat + '<h3>' +
+                '<h2>' + x.item_name + '</h2>' +
+                '<h3>Calories: ' + x.nf_calories + '</h3>' +
+                '<h3>Serving Size: ' + x.nf_serving_size_qty + ' ' + x.nf_serving_size_unit + '</h3>' +
+                '<h3>Total Fat: ' + x.nf_total_fat + '</h3>' +
               '</div>'
               //append all of this into the resultContainer tag above
             );
@@ -31,7 +33,11 @@ function searchValue() {
   getResult(formVal);
 }
 
-$('#searchForm').submit(function(e){
-  e.preventDefault();
-  //prevents the page from reloading
-});
+$(document).ready(function(){
+  $('#searchForm').submit(function(e){
+    e.preventDefault();
+    searchValue()
+    console.log('string');
+    //prevents the page from reloading
+  });
+})
