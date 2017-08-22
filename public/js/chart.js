@@ -37,7 +37,7 @@ new Chart(document.getElementById("line-chart-this-week"), {
         fill: true,
       }, {
         // get average mood (x10 for better display) for 7 days
-        data: [600.2,500.3,480.7,550.5,666.6,780.6,727.2],
+        data: [600.2,500.3,480.7,550.5,660.6,780.6,720.2],
         label: "Mood",
         borderColor: "green",
         fill: true,
