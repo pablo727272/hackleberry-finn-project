@@ -18,8 +18,8 @@ function getResult(userInput) {
               '<div class="itemBar">' +
                 '<h2>' + x.item_name + '</h2>' +
                 '<h3>Calories: ' + x.nf_calories + '</h3>' +
-                '<h3>Serving Size: ' + x.nf_serving_size_qty + ' ' + x.nf_serving_size_unit + '</h3>' +
-                '<h3>Total Fat: ' + x.nf_total_fat + '</h3>' +
+                '<h3>Serving Size: ' + x.nf_serving_size_qty + '</h3>' +
+                '<h3>Quantity: ' + x.nf_serving_size_unit + '</h3>' +
               '</div>'
               //append all of this into the resultContainer tag above
             );
