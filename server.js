@@ -30,10 +30,10 @@ app.get('/about', function(req,res){
     res.sendFile('./html/about.html', {root: './public'})
 })
 
-// contact page route
-app.get('/contact', function(req,res){
-    res.sendFile('./html/contact.html', {root: './public'})
-})
+// // contact page route  CONTACT FORM VIA SMTP LOOKS TOO DEEP FOR THIS PROJECT
+// app.get('/contact', function(req,res){
+//     res.sendFile('./html/contact.html', {root: './public'})
+// })
 
 // api test area route
 app.get('/api-test', function(req,res){
