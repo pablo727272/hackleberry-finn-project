@@ -2,6 +2,8 @@ var express     = require('express')
 var app         = express()
 var bodyParser  = require('body-parser')
 
+var UserInformationModel = require('./db')
+var DailyDataEntryModel = require('./db')
 app.use(express.static('./public'))
 
 // home page route
