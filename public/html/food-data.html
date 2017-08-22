@@ -78,21 +78,26 @@
                                 <h3>What did you consume?</h3>
                                 <input type="text" class="form-control" placeholder="Food/Drink item">
                                 <h3>How many servings?</h3>
-                                <input type="number" min=".5" step=".5" class="form-control">
-                                <h3>What day and time did you consume it?</h3>
-                                <input type="date" placeholder="input date">
-                                <input type="time" placeholder="input date">
-                                <br>
-                                <h3>What was your mood when you consumed it?</h3>
-                                <select class="form-control" placeholder="Gender">
+                                <input type="number" min=".5" step=".5" class="form-control" placeholder="e.g. 2.5">
+                                <h3>When did you consume it?</h3>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="date" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="time" class="form-control">
+                                    </div>
+                                </div>
+                                <h3>What was your mood like?</h3>
+                                <select class="form-control">
                                     <option>Very Happy</option>
                                     <option>Happy</option>
                                     <option>Okay</option>
                                     <option>Unhappy</option>
                                     <option>Very Unhappy</option>
                                 </select>
-                                <br>
-                                <button type="button" class="btn btn-primary">
+                                <br><br>
+                                <button type="button" class="form-control btn btn-primary">
                                     RECORD FOOD ITEM
                                 </button>
                             </div>

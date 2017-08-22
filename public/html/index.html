@@ -99,37 +99,31 @@
             <div class="row">
                 <div class="col-md-6">
                     <!-- USER DATA INPUT FORM START -->
-                    <form id="signup">
+                    <form>
                         <div class="form-group">
-                            <h3>Please tell us a little about yourself...</h3>
-                            Gender:
+                            <h2>Please tell us a little about yourself...</h2>
+                            <h3>Gender:</h3>
                             <select class="form-control">
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                </select>
-                            <br>
-                            <input type="number" min="1" class="form-control" placeholder="Age">
-                            <br>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                            <h3>Age:</h3>
+                            <input type="number" min="1" class="form-control" placeholder="Age in years">
+                            <h3>Height:</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="number" min="1" class="form-control" placeholder="Feet">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="number" min="1" class="form-control" placeholder="Inches">
+                                </div>
+                            </div>
+                            <h3>Weight:</h3>
                             <input type="number" min="1" class="form-control" placeholder="Weight in lbs">
-                            <br>
-                            <input type="number" min="1" class="form-control" placeholder="Height in inches">
-                            <!-- <br>
-                                Weight Loss Goal:
-                                <select class="form-control">
-                                    <option>Lose 2 lbs per week</option>
-                                    <option>Lose 1.5 lbs per week</option>
-                                    <option>Lose 1 lbs per week</option>
-                                    <option>Lose 0.5 lbs per week</option>
-                                    <option>Maintain my current weight</option>
-                                    <option>Gain 0.5 lbs per week</option>
-                                    <option>Gain 1 lbs per week</option>
-                                    <option>Gain 1.5 lbs per week</option>
-                                    <option>Gain 2 lbs per week</option>
-                                </select> -->
-                            <br>
-                            <button type="button" class="btn btn-primary">
-                                    SIGN ME UP!
-                                </button>
+                            <br><br>
+                            <button type="button" class="form-control btn btn-primary">
+                                RECORD MY INFO
+                            </button>
                         </div>
                     </form>
                     <!-- USER DATA INPUT FORM END -->

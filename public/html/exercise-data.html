@@ -82,15 +82,25 @@
                                     <option>Cycling/Mountain Biking</option>
                                     <option>Sleep/Nap</option>
                                 </select>
-                                </select>
-                                <h3>What date and time did you do it?</h3>
-                                <input type="date" placeholder="input date">
-                                <input type="time" placeholder="input date">
+                                <h3>When did you do it?</h3>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="date" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="time" class="form-control">
+                                    </div>
+                                </div>
                                 <h3>Duration?</h3>
-                                <input type="number" min="1" placeholder="Hours">
-                                <input type="number" min="1" placeholder="Minutes">
-                                <br>
-                                <h3>What was your mood when you did it?</h3>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="number" min="1" class="form-control" placeholder="Hours">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="number" min="1" class="form-control" placeholder="Minutes">
+                                    </div>
+                                </div>
+                                <h3>What was your mood like?</h3>
                                 <select class="form-control">
                                     <option>Very Happy</option>
                                     <option>Happy</option>
@@ -98,8 +108,8 @@
                                     <option>Unhappy</option>
                                     <option>Very Unhappy</option>
                                 </select>
-                                <br>
-                                <button type="button" class="btn btn-primary">
+                                <br><br>
+                                <button type="button" class="form-control btn btn-primary">
                                     RECORD EXERCISE/REST ITEM
                                 </button>
                             </div>
