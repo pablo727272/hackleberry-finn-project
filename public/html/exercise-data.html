@@ -126,13 +126,14 @@
                 <!-- DISPLAY ACTIVITIES ON THE PAGE START -->
                 <ul>
                     <li v-for="item in activities">
-                        Activity: {{adActivityName}}<br>
-                        Date: {{adEntryDate}}<br>
-                        Time: {{adEntryTime}}<br>
-                        Hours: {{adActivityAmountHours}}<br>
-                        Minutes: {{adActivityAmountMinutes}}<br>
-                        Mood: {{adMood}}<br>
+                        Activity: {{item.adActivityName}}<br>
+                        Date: {{item.adEntryDate}}<br>
+                        Time: {{item.adEntryTime}}<br>
+                        Hours: {{item.adActivityAmountHours}}<br>
+                        Minutes: {{item.adActivityAmountMinutes}}<br>
+                        Mood: {{item.adMood}}<br>
                     </li>
+                    <br>
                 </ul>
                 <!-- DISPLAY ACTIVITIES ON THE PAGE END -->
 

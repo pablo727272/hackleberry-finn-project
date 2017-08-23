@@ -18,6 +18,9 @@ var mainVm = new Vue({
         adMood : '',
         activities : [],
     },
+    created : function(){
+        getFreshData()
+    },
     methods : {
         createActivity : function(event){
             event.preventDefault()
@@ -99,8 +102,6 @@ var mainVm = new Vue({
     //     }
     // },
 
-        created: function(){
-            getFreshData()
-        }
+
     }
 })
