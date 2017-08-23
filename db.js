@@ -13,19 +13,15 @@ var userInformationSchema = mongoose.Schema({
     },
     uiAge : {
         type        : Number,
-        required    : true,
     },
     uiGender : {
         type        : String,
-        required    : true,
     },
     uiWeight : {
         type        : Number,
-        required    : true,
     },
     uiHeight : {
         type        : Number,
-        required    : true,
     }
 })
 
@@ -87,6 +83,8 @@ var UserInformationModel = mongoose.model('userInformation', userInformationSche
 var FoodDataEntryModel = mongoose.model('foodDataEntry', foodDataEntrySchema, 'foodDataEntry')
 var ActivityDataEntryModel = mongoose.model('activityDataEntry', activityDataEntrySchema, 'activityDataEntry')
 
-module.exports = UserInformationModel
-module.exports = FoodDataEntryModel
-module.exports = ActivityDataEntryModel
+module.exports = {
+    UserInformationModel: UserInformationModel,
+    FoodDataEntryModel: FoodDataEntryModel,
+    ActivityDataEntryModel: ActivityDataEntryModel
+}
