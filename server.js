@@ -30,6 +30,7 @@ app.use(express.static('./public'))
 // })
 
 //////////// API Routes end //////////////////
+
 // These routes send HTML to clients
 // home page route
 app.get('/', function(req,res){

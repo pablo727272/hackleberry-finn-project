@@ -1,4 +1,6 @@
-// example line chart...  mood goes from 0 (0) very unhappy to 4 (100)... 1 (25), 2 (50), 3 (75)
+console.log('Hello world from /js/chart.js');
+
+// line chart...  mood goes from (0) very unhappy to (100)... (25), (50), (75)
 
 new Chart(document.getElementById("line-chart-today"), {
   type: 'line',

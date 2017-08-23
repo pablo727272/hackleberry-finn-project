@@ -1,3 +1,5 @@
+console.log('Hello world from /js/activity.js');
+
 // var getFreshData = function(){
 //     $.get('/activity', function(dataFromServer){
 //         console.log(dataFromServer)
