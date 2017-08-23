@@ -65,10 +65,10 @@
                 <h2>Calorie Counter: Exercise Data</h2>
                 <hr>
 
-                <!-- FOOD ITEM AREA START -->
+                <!-- ACTIVITY ITEM AREA START -->
                 <div class="row">
                     <div class="col-md-6">
-                        <!-- EXERCISE ITEM INPUT FORM START -->
+                        <!-- ACITIVITY ITEM INPUT FORM START -->
                         <h3>What kind of exercise or rest?</h3>
                         <form v-on:submit="createActivity">
                             <div class="form-group">
@@ -93,7 +93,7 @@
                                 <h3>Duration?</h3>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <input v-model="adActivityAmountHours" type="number" min="1" class="form-control" placeholder="Hours">
+                                        <input v-model="adActivityAmountHours" type="number" min="0" class="form-control" placeholder="Hours">
                                     </div>
                                     <div class="col-md-6">
                                         <input v-model="adActivityAmountMinutes" type="number" min="1" class="form-control" placeholder="Minutes">
@@ -113,13 +113,28 @@
                                 </button>
                             </div>
                         </form>
-                        <!-- EXERCISE ITEM INPUT FORM END -->
+                        <!-- ACTIVITY ITEM INPUT FORM END -->
                     </div>
                     <div class="col-md-6">
                         <img src="/images/cycling-v2.jpg" class="img-responsive">
                     </div>
                 </div>
-                <!-- FOOD ITEM AREA END -->
+                <!-- ACTIVITY ITEM AREA END -->
+
+                <hr>
+
+                <!-- DISPLAY ACTIVITIES ON THE PAGE START -->
+                <ul>
+                    <li v-for="item in activities">
+                        Activity: {{adActivityName}}<br>
+                        Date: {{adEntryDate}}<br>
+                        Time: {{adEntryTime}}<br>
+                        Hours: {{adActivityAmountHours}}<br>
+                        Minutes: {{adActivityAmountMinutes}}<br>
+                        Mood: {{adMood}}<br>
+                    </li>
+                </ul>
+                <!-- DISPLAY ACTIVITIES ON THE PAGE END -->
 
                 <hr>
 

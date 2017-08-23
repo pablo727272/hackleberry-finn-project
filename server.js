@@ -7,6 +7,12 @@ var FoodDataEntryModel = require('./db')
 var ActivityDataEntryModel = require('./db')
 app.use(express.static('./public'))
 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
+
 // API Routes
 // Create User Information Doc
 // app.post('/userInformation', function(req,res){
@@ -15,19 +21,34 @@ app.use(express.static('./public'))
 //     })
 // })
 //
-// // CRUD database processes
-// // (C)reate exercise/rest items
-// app.post('/todo', function(req, res){
-//     var newTodo = new TodoModel({
-//         text: req.body.todoText
-//     })
-//     newTodo.save(function(err){
-//         if (err) { next(err) }
-//         else {
-//             res.send({success:'success!'})
-//         }
-//     })
-// })
+// (C)reate todo items
+app.post('/activity', function(req, res, next){
+    console.log(req.body);
+    var newActivity = new ActivityDataEntryModel({
+        adActivityName: req.body.adActivityName,
+        adEntryDate: req.body.adEntryDate,
+        adEntryTime: req.body.adEntryTime,
+        adActivityAmountHours: req.body.adActivityAmountHours,
+        adActivityAmountMinutes: req.body.adActivityAmountMinutes,
+        adMood: req.body.adMood,
+    })
+    newActivity.save(function(err){
+        if (err) { next(err) }
+        else {
+            res.send({success:'success!'})
+        }
+    })
+})
+
+// (R)ead todo items
+app.get('/activity', function(req, res, next){
+    ActivityDataEntryModel.find({}, function(err, data){
+        if (err) { next(err) }
+        else {
+            res.send(data)
+        }
+    })
+})
 
 //////////// API Routes end //////////////////
 
@@ -82,6 +103,7 @@ app.use(function(req, res, next){
 
 // if we call `next(err)` in our code above, it'll jump us down to right here.
 app.use(function(err, req, res, next){
+    console.log(err);
     res.status(500).send("oops")
 })
 

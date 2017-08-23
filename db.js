@@ -5,83 +5,81 @@ var userInformationSchema = mongoose.Schema({
     userId : {
         type        : Number,
         required    : true,
-        unique      : true
+        unique      : true,
     },
     uiName : {
         type        : String,
-        required    : true
+        required    : true,
     },
     uiAge : {
         type        : Number,
-        required    : true
+        required    : true,
     },
     uiGender : {
         type        : String,
-        required    : true
+        required    : true,
     },
     uiWeight : {
         type        : Number,
-        required    : true
+        required    : true,
     },
     uiHeight : {
         type        : Number,
-        required    : true
+        required    : true,
     }
 })
 
 var foodDataEntrySchema = mongoose.Schema({
-    userId : {
-        type        : Number,
-        required    : true,
-        unique      : true
-    },
     fdEntryDate : {
         type        : Date,
-        required    : true
+        required    : true,
     },
     fdEntryTime : {
         type        : String,
-        required    : true
+        required    : true,
     },
     fdMood : {
-        type        : String
+        type        : String,
+        required    : true,
     },
     fdFoodName : {
-        type        : String
+        type        : String,
+        required    : true,
     },
     fdFoodQuantity : {
-        type        : Number
+        type        : Number,
+        required    : true,
     },
     fdFoodCalories : {
-        type        : Number
+        type        : Number,
+        required    : true,
     },
 })
 
 var activityDataEntrySchema = mongoose.Schema({
-    userId : {
-        type        : Number,
+    adActivityName : {
+        type        : String,
         required    : true,
-        unique      : true
     },
     adEntryDate : {
         type        : Date,
-        required    : true
+        required    : true,
     },
     adEntryTime : {
         type        : String,
-        required    : true
-    },
-    adMood : {
-        type        : String
-    },
-    adActivityName : {
-        type        : String
+        required    : true,
     },
     adActivityAmountHours : {
-        type        : Number
+        type        : Number,
+        required    : true,
     },
     adActivityAmountMinutes : {
-        type        : Number
+        type        : Number,
+        required    : true,
+    },
+    adMood : {
+        type        : String,
+        required    : true,
     },
 })
 
