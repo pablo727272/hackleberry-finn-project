@@ -29,7 +29,7 @@ app.get('/userInformation', function(req, res){
 })
 
 //
-// (C)reate todo items
+// (C)reate activity items
 app.post('/activity', function(req, res, next){
     console.log(req.body);
     var newActivity = new ActivityDataEntryModel({
@@ -48,9 +48,38 @@ app.post('/activity', function(req, res, next){
     })
 })
 
-// (R)ead todo items
+// (R)ead activity items
 app.get('/activity', function(req, res, next){
     ActivityDataEntryModel.find({}, function(err, data){
+        if (err) { next(err) }
+        else {
+            res.send(data)
+        }
+    })
+})
+
+// (C)reate food items
+app.post('/fooditem', function(req, res, next){
+    console.log(req.body);
+    var newFoodItem = new FoodDataEntryModel({
+        fdFoodName: req.body.fdFoodName,
+        fdFoodQuantity: req.body.fdFoodQuantity,
+        fdEntryDate: req.body.fdEntryDate,
+        fdEntryTime: req.body.fdEntryTime,
+        fdMood: req.body.fdMood,
+        fdCaloriesIn: req.body.fdCaloriesIn,
+    })
+    newFoodItem.save(function(err){
+        if (err) { next(err) }
+        else {
+            res.send({success:'success!'})
+        }
+    })
+})
+
+// (R)ead food items
+app.get('/fooditem', function(req, res, next){
+    FoodDataEntryModel.find({}, function(err, data){
         if (err) { next(err) }
         else {
             res.send(data)

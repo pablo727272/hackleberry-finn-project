@@ -5,7 +5,7 @@
         <!-- vue.js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
         <meta charset="utf-8"/>
-        <title>Hackleberry Finn | Calorie Counter | Exercise Data</title>
+        <title>Hackleberry Finn | Calorie Counter | Food Data</title>
         <!-- mobile ready -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- bootstrap css -->
@@ -22,12 +22,14 @@
         <!-- bootstrap js -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <!-- custom js -->
-        <script src="/js/main.js"></script>
+        <!-- <script src="/js/main.js"></script> -->
+        <script src="/js/food.js"></script>
     </head>
 
     <body>
 
-        <div id="appActivity"> <!-- begin vue app -->
+        <div id="app"> <!-- begin vue app -->
+            <!-- all vue directives start with 'v-', to make them easier to identify -->
 
             <!-- NAVBAR START -->
             <nav class="navbar navbar-default"><!-- open navbar -->
@@ -61,17 +63,20 @@
             <!-- WRAP MAIN SECTION IN CONTAINER START -->
             <div class="container">
 
-                <img src="/images/walking-v2.jpg" class="img-responsive">
-                <h2>Calorie Counter: Exercise Data</h2>
+                <img src="/images/pancakes-v2.jpg" class="img-responsive">
+                <h2>Calorie Counter: Food Data</h2>
                 <hr>
 
-                <!-- ACTIVITY ITEM AREA START -->
+                <!-- FOOD ITEM AREA START -->
                 <div class="row">
                     <div class="col-md-6">
-                        <!-- ACITIVITY ITEM INPUT FORM START -->
-                        <form v-on:submit="createActivity">
+                        <img src="/images/food-on-board-v2.jpg" class="img-responsive">
+                    </div>
+                    <div class="col-md-6">
+                        <!-- FOOD ITEM INPUT FORM START -->
+                        <form v-on:submit="createFoodItem">
                             <div class="form-group">
-                                <h3>What kind of exercise or rest?</h3>
+                                <h3>What did you consume?</h3>
                                 <select v-model="adActivityName" class="form-control">
                                     <option>Running/Jogging</option>
                                     <!-- <option>Treadmill/Elliptical</option> -->
@@ -81,26 +86,17 @@
                                     <option>Cycling/Mountain Biking</option>
                                     <option>Sleeping/Napping</option>
                                 </select>
-                                <h3>When did you do it?</h3>
+                                <h3>When did you consume it?</h3>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <input v-model="adEntryDate" type="date" class="form-control">
+                                        <input type="date" class="form-control">
                                     </div>
                                     <div class="col-md-6">
-                                        <input v-model="adEntryTime" type="time" class="form-control">
-                                    </div>
-                                </div>
-                                <h3>Duration?</h3>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <input v-model="adActivityAmountHours" type="number" min="0" class="form-control" placeholder="Hours">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input v-model="adActivityAmountMinutes" type="number" min="0" class="form-control" placeholder="Minutes">
+                                        <input type="time" class="form-control">
                                     </div>
                                 </div>
                                 <h3>What was your mood like?</h3>
-                                <select v-model="adMood" class="form-control">
+                                <select class="form-control">
                                     <option>Very Happy</option>
                                     <option>Happy</option>
                                     <option>Okay</option>
@@ -108,35 +104,21 @@
                                     <option>Very Unhappy</option>
                                 </select>
                                 <br><br>
-                                <button type="submit" class="form-control btn btn-primary">
-                                    RECORD EXERCISE/REST ITEM
+                                <button type="button" class="form-control btn btn-primary">
+                                    RECORD FOOD ITEM
                                 </button>
                             </div>
                         </form>
-                        <!-- ACTIVITY ITEM INPUT FORM END -->
-                    </div>
-                    <div class="col-md-6">
-                        <img src="/images/cycling-v2.jpg" class="img-responsive">
+                        <!-- FOOD ITEM INPUT FORM END -->
                     </div>
                 </div>
-                <!-- ACTIVITY ITEM AREA END -->
+                <!-- FOOD ITEM AREA END -->
 
                 <hr>
 
-                <!-- DISPLAY ACTIVITIES ON THE PAGE START -->
-                <h4>Today's Activities:</h4>
-                <ol>
-                    <li v-for="item in activities">
-                        <p>Activity: {{item.adActivityName}}</p>
-                        <p>Date: {{item.adEntryDate}}</p>
-                        <p>Time: {{item.adEntryTime}}</p>
-                        <p>Hours: {{item.adActivityAmountHours}}</p>
-                        <p>Minutes: {{item.adActivityAmountMinutes}}</p>
-                        <p>Mood: {{item.adMood}}</p>
-                        <p>Calories Burned: {{item.adCaloriesOut}}</p>
-                    </li>
-                </ol>
-                <!-- DISPLAY ACTIVITIES ON THE PAGE END -->
+                <!-- FOOD SEARCH RESULTS AREA START -->
+                <div class="resultContainer"></div>
+                <!-- FOOD SEARCH RESULTS AREA END -->
 
                 <hr>
 
@@ -152,10 +134,6 @@
             <!-- FOOTER END -->
 
         </div> <!-- end vue app -->
-
-        <!-- activity item js - vue.js files go down here-->
-        <script src="/js/activity.js"></script>
-
     </body>
 
 </html>

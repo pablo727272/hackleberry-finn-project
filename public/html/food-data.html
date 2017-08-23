@@ -22,12 +22,13 @@
         <!-- bootstrap js -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <!-- custom js -->
-        <script src="/js/main.js"></script>
+        <!-- <script src="/js/main.js"></script> -->
+        <script src="/js/api.js"></script>
     </head>
 
     <body>
 
-        <div id="app"> <!-- begin vue app -->
+        <div id="appFoodItem"> <!-- begin vue app -->
             <!-- all vue directives start with 'v-', to make them easier to identify -->
 
             <!-- NAVBAR START -->
@@ -73,10 +74,13 @@
                     </div>
                     <div class="col-md-6">
                         <!-- FOOD ITEM INPUT FORM START -->
-                        <form>
+                        <form id="searchForm" v-on:submit="createFoodItem">
                             <div class="form-group">
                                 <h3>What did you consume?</h3>
-                                <input type="text" class="form-control" placeholder="Food/Drink item">
+                                <!-- <input type="text" class="form-control" placeholder="Food/Drink item"> -->
+                                <input v-model="fdFoodName" type="text" class="form-control" id="searchBar">
+                                <br>
+                                <button type="submit" class="form-control btn btn-primary" onclick="searchValue()">Search</button>
                                 <h3>How many servings?</h3>
                                 <input type="number" min=".5" step=".5" class="form-control" placeholder="e.g. 2.5">
                                 <h3>When did you consume it?</h3>
@@ -109,6 +113,12 @@
 
                 <hr>
 
+                <!-- FOOD SEARCH RESULTS AREA START -->
+                <div class="resultContainer"></div>
+                <!-- FOOD SEARCH RESULTS AREA END -->
+
+                <hr>
+
             </div>
             <!-- WRAP MAIN SECTION IN CONTAINER END -->
 
@@ -121,7 +131,6 @@
             <!-- FOOTER END -->
 
         </div> <!-- end vue app -->
-
     </body>
 
 </html>
