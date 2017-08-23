@@ -1,48 +1,48 @@
-console.log('Hello world from /js/activity.js');
+console.log('Hello world from /js/food.js');
 
 var getFreshData = function(){
-    $.get('/activity', function(dataFromServer){
+    $.get('/fooditem', function(dataFromServer){
         console.log(dataFromServer)
-        mainVm.activities = dataFromServer
+        mainVm.foodItems = dataFromServer
     })
 }
 
 var mainVm = new Vue({
-    el: '#appActivity',
+    el: '#appFoodItem',
     data : {
-        adActivityName : '',
-        adEntryDate : '',
-        adEntryTime : '',
-        adActivityAmountHours : '',
-        adActivityAmountMinutes : '',
-        adMood : '',
-        activities : [],
+        fdFoodName : '',
+        fdFoodQuantity : '',
+        fdEntryDate : '',
+        fdEntryTime : '',
+        fdMood : '',
+        fdCaloriesIn : '',
+        foodItems : [],
     },
     created : function(){
         getFreshData()
     },
     methods : {
-        createActivity : function(event){
+        createFoodItem : function(event){
             event.preventDefault()
             // inside of a vue method, we can use `this` to access any data or method on that VM.
             // always send an object when using AJAX
-            console.log('activity name',this.adActivityName)
-            console.log('activity date',this.adEntryDate)
-            console.log('activity time',this.adEntryTime)
-            console.log('activity hours',this.adActivityAmountHours)
-            console.log('activity minutes',this.adActivityAmountMinutes)
-            console.log('activity mood',this.adMood)
+            console.log('food name',this.fdFoodName)
+            console.log('food quantity',this.fdFoodQuantity)
+            console.log('food date',this.fdEntryDate)
+            console.log('food time',this.fdEntryTime)
+            console.log('food mood',this.fdMood)
+            console.log('food calories in',this.fdCaloriesIn)
 
             $.ajax({
-                url: '/activity',
+                url: '/fooditem',
                 type: 'POST',
                 data: JSON.stringify({
-                    adActivityName: this.adActivityName,
-                    adEntryDate: this.adEntryDate,
-                    adEntryTime: this.adEntryTime,
-                    adActivityAmountHours: this.adActivityAmountHours,
-                    adActivityAmountMinutes: this.adActivityAmountMinutes,
-                    adMood: this.adMood,
+                    fdFoodName: this.fdFoodName,
+                    fdFoodQuantity: this.fdFoodQuantity,
+                    fdEntryDate: this.fdEntryDate,
+                    fdEntryTime: this.fdEntryTime,
+                    fdMood: this.fdMood,
+                    fdCaloriesIn: this.fdCaloriesIn,
                 }),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
@@ -50,12 +50,12 @@ var mainVm = new Vue({
                     console.log(dataFromServer)
                     if ( dataFromServer.success ) {
                         // only clear the form after we know the submission was successful
-                        mainVm.adActivityName = '',
-                        mainVm.adEntryDate = '',
-                        mainVm.adEntryTime = '',
-                        mainVm.adActivityAmountHours = '',
-                        mainVm.adActivityAmountMinutes = '',
-                        mainVm.adMood = '',
+                        mainVm.fdFoodName = '',
+                        mainVm.fdFoodQuantity = '',
+                        mainVm.fdEntryDate = '',
+                        mainVm.fdEntryTime = '',
+                        mainVm.fdMood = '',
+                        mainVm.fdCaloriesIn = '',
                         getFreshData()
                     }
                 }

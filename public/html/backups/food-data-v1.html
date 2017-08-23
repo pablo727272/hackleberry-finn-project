@@ -23,7 +23,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <!-- custom js -->
         <!-- <script src="/js/main.js"></script> -->
-        <script src="/js/api.js"></script>
+        <script src="/js/food.js"></script>
     </head>
 
     <body>
@@ -74,15 +74,18 @@
                     </div>
                     <div class="col-md-6">
                         <!-- FOOD ITEM INPUT FORM START -->
-                        <form id="searchForm">
+                        <form v-on:submit="createFoodItem">
                             <div class="form-group">
                                 <h3>What did you consume?</h3>
-                                <!-- <input type="text" class="form-control" placeholder="Food/Drink item"> -->
-                                <input type="text" class="form-control" id="searchBar">
-                                <br>
-                                <button type="submit" class="form-control btn btn-primary" onclick="searchValue()">Search</button>
-                                <h3>How many servings?</h3>
-                                <input type="number" min=".5" step=".5" class="form-control" placeholder="e.g. 2.5">
+                                <select v-model="adActivityName" class="form-control">
+                                    <option>Running/Jogging</option>
+                                    <!-- <option>Treadmill/Elliptical</option> -->
+                                    <option>Weightlifting</option>
+                                    <option>Walking</option>
+                                    <!-- <option>Swimming</option> -->
+                                    <option>Cycling/Mountain Biking</option>
+                                    <option>Sleeping/Napping</option>
+                                </select>
                                 <h3>When did you consume it?</h3>
                                 <div class="row">
                                     <div class="col-md-6">

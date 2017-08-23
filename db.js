@@ -30,6 +30,14 @@ var userInformationSchema = mongoose.Schema({
 })
 
 var foodDataEntrySchema = mongoose.Schema({
+    fdFoodName : {
+        type        : String,
+        required    : true,
+    },
+    fdFoodQuantity : {
+        type        : Number,
+        required    : true,
+    },
     fdEntryDate : {
         type        : Date,
         required    : true,
@@ -42,15 +50,7 @@ var foodDataEntrySchema = mongoose.Schema({
         type        : String,
         required    : true,
     },
-    fdFoodName : {
-        type        : String,
-        required    : true,
-    },
-    fdFoodQuantity : {
-        type        : Number,
-        required    : true,
-    },
-    fdFoodCalories : {
+    fdCaloriesIn : {
         type        : Number,
         required    : true,
     },
@@ -79,6 +79,10 @@ var activityDataEntrySchema = mongoose.Schema({
     },
     adMood : {
         type        : String,
+        required    : true,
+    },
+    adCaloriesOut : {
+        type        : Number,
         required    : true,
     },
 })

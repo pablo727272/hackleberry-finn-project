@@ -16,6 +16,7 @@ var mainVm = new Vue({
         adActivityAmountHours : '',
         adActivityAmountMinutes : '',
         adMood : '',
+        adCaloriesOut : '',
         activities : [],
     },
     created : function(){
@@ -32,6 +33,7 @@ var mainVm = new Vue({
             console.log('activity hours',this.adActivityAmountHours)
             console.log('activity minutes',this.adActivityAmountMinutes)
             console.log('activity mood',this.adMood)
+            console.log('activity calories out',this.adCaloriesOut)
 
             $.ajax({
                 url: '/activity',
@@ -43,6 +45,7 @@ var mainVm = new Vue({
                     adActivityAmountHours: this.adActivityAmountHours,
                     adActivityAmountMinutes: this.adActivityAmountMinutes,
                     adMood: this.adMood,
+                    adCaloriesOut: this.adCaloriesOut,
                 }),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
@@ -56,6 +59,7 @@ var mainVm = new Vue({
                         mainVm.adActivityAmountHours = '',
                         mainVm.adActivityAmountMinutes = '',
                         mainVm.adMood = '',
+                        mainVm.adCaloriesOut = '',
                         getFreshData()
                     }
                 }

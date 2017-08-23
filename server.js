@@ -51,17 +51,17 @@ app.get('/activity', function(req, res, next){
 })
 
 // (C)reate food items
-app.post('/activity', function(req, res, next){
+app.post('/fooditem', function(req, res, next){
     console.log(req.body);
-    var newActivity = new ActivityDataEntryModel({
-        adActivityName: req.body.adActivityName,
-        adEntryDate: req.body.adEntryDate,
-        adEntryTime: req.body.adEntryTime,
-        adActivityAmountHours: req.body.adActivityAmountHours,
-        adActivityAmountMinutes: req.body.adActivityAmountMinutes,
-        adMood: req.body.adMood,
+    var newFoodItem = new FoodDataEntryModel({
+        fdFoodName: req.body.fdFoodName,
+        fdFoodQuantity: req.body.fdFoodQuantity,
+        fdEntryDate: req.body.fdEntryDate,
+        fdEntryTime: req.body.fdEntryTime,
+        fdMood: req.body.fdMood,
+        fdCaloriesIn: req.body.fdCaloriesIn,
     })
-    newActivity.save(function(err){
+    newFoodItem.save(function(err){
         if (err) { next(err) }
         else {
             res.send({success:'success!'})
@@ -70,8 +70,8 @@ app.post('/activity', function(req, res, next){
 })
 
 // (R)ead food items
-app.get('/activity', function(req, res, next){
-    ActivityDataEntryModel.find({}, function(err, data){
+app.get('/fooditem', function(req, res, next){
+    FoodDataEntryModel.find({}, function(err, data){
         if (err) { next(err) }
         else {
             res.send(data)
@@ -115,11 +115,6 @@ app.get('/about', function(req,res){
 // api test area route
 app.get('/api-test', function(req,res){
     res.sendFile('./html/api-test.html', {root: './public'})
-})
-
-// api test area route
-app.get('/food-data-2', function(req,res){
-    res.sendFile('./html/food-data-170823.html', {root: './public'})
 })
 
 // 404 page
