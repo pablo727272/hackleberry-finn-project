@@ -21,7 +21,13 @@ var mainVm = new Vue({
             event.preventDefault()
             // inside of a vue method, we can use `this` to access any data or method on that VM.
             // always send an object when using AJAX
-            console.log(this.adActivityName)
+            console.log('activity name',this.adActivityName)
+            console.log('activity date',this.adEntryDate)
+            console.log('activity time',this.adEntryTime)
+            console.log('activity hours',this.adActivityAmountHours)
+            console.log('activity minutes',this.adActivityAmountMinutes)
+            console.log('activity mood',this.adMood)
+
 
             $.ajax({
                 url: '/todo',
