@@ -2,9 +2,10 @@ var express     = require('express')
 var app         = express()
 var bodyParser  = require('body-parser')
 
-var UserInformationModel = require('./db')
-var FoodDataEntryModel = require('./db')
-var ActivityDataEntryModel = require('./db')
+var db = require('./db')
+// var UserInformationModel = require('UserInformationModel')
+// var FoodDataEntryModel = require('FoodDataEntryModel')
+// var ActivityDataEntryModel = require('ActivityDataEntryModel')
 app.use(express.static('./public'))
 
 // parse application/x-www-form-urlencoded
@@ -14,12 +15,19 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // API Routes
-// Create User Information Doc
-// app.post('/userInformation', function(req,res){
-//     var newUserInfo = new UserInformationModel({
-//         userId : req.
-//     })
-// })
+// Read userInformation Doc
+app.get('/userInformation', function(req, res){
+    db.UserInformationModel.findOne({"userId": req.query.userId},function(err,data){
+        if(err){
+            // console.log("ERROR!",err)
+            next(err)}
+        else{
+            // console.log("DATA!",data)
+            res.send(data)
+        }
+    })
+})
+
 //
 // (C)reate activity items
 app.post('/activity', function(req, res, next){
