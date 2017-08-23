@@ -71,6 +71,7 @@ app.post('/fooditem', function(req, res, next){
 
 // (R)ead food items
 app.get('/fooditem', function(req, res, next){
+    console.log('fooditem')
     FoodDataEntryModel.find({}, function(err, data){
         if (err) { next(err) }
         else {

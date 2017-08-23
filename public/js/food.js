@@ -3,11 +3,11 @@ console.log('Hello world from /js/food.js');
 var getFreshData = function(){
     $.get('/fooditem', function(dataFromServer){
         console.log(dataFromServer)
-        mainVm.foodItems = dataFromServer
+        mainFoodVm.foodItems = dataFromServer
     })
 }
 
-var mainVm = new Vue({
+var mainFoodVm = new Vue({
     el: '#appFoodItem',
     data : {
         fdFoodName : '',
@@ -50,14 +50,15 @@ var mainVm = new Vue({
                     console.log(dataFromServer)
                     if ( dataFromServer.success ) {
                         // only clear the form after we know the submission was successful
-                        mainVm.fdFoodName = '',
-                        mainVm.fdFoodQuantity = '',
-                        mainVm.fdEntryDate = '',
-                        mainVm.fdEntryTime = '',
-                        mainVm.fdMood = '',
-                        mainVm.fdCaloriesIn = '',
+                        mainFoodVM.fdFoodName = '',
+                        mainFoodVM.fdFoodQuantity = '',
+                        mainFoodVM.fdEntryDate = '',
+                        mainFoodVM.fdEntryTime = '',
+                        mainFoodVM.fdMood = '',
+                        mainFoodVM.fdCaloriesIn = '',
                         getFreshData()
                     }
+                    console.log('doing the thing')
                 }
             });
         },

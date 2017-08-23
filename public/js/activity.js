@@ -3,11 +3,11 @@ console.log('Hello world from /js/activity.js');
 var getFreshData = function(){
     $.get('/activity', function(dataFromServer){
         console.log(dataFromServer)
-        mainVm.activities = dataFromServer
+        mainActivityVm.activities = dataFromServer
     })
 }
 
-var mainVm = new Vue({
+var mainActivityVm = new Vue({
     el: '#appActivity',
     data : {
         adActivityName : '',
@@ -53,13 +53,13 @@ var mainVm = new Vue({
                     console.log(dataFromServer)
                     if ( dataFromServer.success ) {
                         // only clear the form after we know the submission was successful
-                        mainVm.adActivityName = '',
-                        mainVm.adEntryDate = '',
-                        mainVm.adEntryTime = '',
-                        mainVm.adActivityAmountHours = '',
-                        mainVm.adActivityAmountMinutes = '',
-                        mainVm.adMood = '',
-                        mainVm.adCaloriesOut = '',
+                        mainActivityVm.adActivityName = '',
+                        mainActivityVm.adEntryDate = '',
+                        mainActivityVm.adEntryTime = '',
+                        mainActivityVm.adActivityAmountHours = '',
+                        mainActivityVm.adActivityAmountMinutes = '',
+                        mainActivityVm.adMood = '',
+                        mainActivityVm.adCaloriesOut = '',
                         getFreshData()
                     }
                 }

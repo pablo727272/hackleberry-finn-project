@@ -22,8 +22,7 @@
         <!-- bootstrap js -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <!-- custom js -->
-        <!-- <script src="/js/main.js"></script> -->
-        <script src="/js/api.js"></script>
+        <script src="/js/main.js"></script>
     </head>
 
     <body>
@@ -82,18 +81,18 @@
                                 <br>
                                 <button type="submit" class="form-control btn btn-primary" onclick="searchValue()">Search</button>
                                 <h3>How many servings?</h3>
-                                <input type="number" min=".5" step=".5" class="form-control" placeholder="e.g. 2.5">
+                                <input v-model="fdFoodQuantity" type="number" min=".5" step=".5" class="form-control" placeholder="e.g. 2.5">
                                 <h3>When did you consume it?</h3>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <input type="date" class="form-control">
+                                        <input v-model="fdEntryDate" type="date" class="form-control">
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="time" class="form-control">
+                                        <input v-model="fdEntryTime" type="time" class="form-control">
                                     </div>
                                 </div>
                                 <h3>What was your mood like?</h3>
-                                <select class="form-control">
+                                <select v-model="fdMood" class="form-control">
                                     <option>Very Happy</option>
                                     <option>Happy</option>
                                     <option>Okay</option>
@@ -101,7 +100,7 @@
                                     <option>Very Unhappy</option>
                                 </select>
                                 <br><br>
-                                <button type="button" class="form-control btn btn-primary">
+                                <button type="submit" class="form-control btn btn-primary">
                                     RECORD FOOD ITEM
                                 </button>
                             </div>
@@ -113,8 +112,24 @@
 
                 <hr>
 
+                <!-- DISPLAY ACTIVITIES ON THE PAGE START -->
+                <h4>Today's Foods:</h4>
+                <ol>
+                    <li v-for="item in foodItems">
+                        <p>Food Name: {{item.fdFoodName}}</p>
+                        <p>Quantity: {{item.fdFoodQuantity}}</p>
+                        <p>Date: {{item.fdEntryDate}}</p>
+                        <p>Time: {{item.fdEntryTime}}</p>
+                        <p>Mood: {{item.fdMood}}</p>
+                        <p>Calories: {{item.fdCaloriesIn}}</p>
+                    </li>
+                </ol>
+                <!-- DISPLAY ACTIVITIES ON THE PAGE END -->
+
+                <hr>
+
                 <!-- FOOD SEARCH RESULTS AREA START -->
-                <div class="resultContainer"></div>
+                <div class="resultContainer">food search results go here</div>
                 <!-- FOOD SEARCH RESULTS AREA END -->
 
                 <hr>
@@ -131,6 +146,10 @@
             <!-- FOOTER END -->
 
         </div> <!-- end vue app -->
+
+        <!-- activity item js - vue.js files go down here-->
+        <script src="/js/food.js"></script>
+
     </body>
 
 </html>
