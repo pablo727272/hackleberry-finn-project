@@ -1,11 +1,11 @@
 console.log('Hello world from /js/activity.js');
 
-// var getFreshData = function(){
-//     $.get('/activity', function(dataFromServer){
-//         console.log(dataFromServer)
-//         mainVm.activities = dataFromServer
-//     })
-// }
+var getFreshData = function(){
+    $.get('/activity', function(dataFromServer){
+        console.log(dataFromServer)
+        mainVm.activities = dataFromServer
+    })
+}
 
 var mainVm = new Vue({
     el: '#appActivity',
@@ -30,18 +30,29 @@ var mainVm = new Vue({
             console.log('activity minutes',this.adActivityAmountMinutes)
             console.log('activity mood',this.adMood)
 
-
             $.ajax({
-                url: '/todo',
+                url: '/activity',
                 type: 'POST',
-                data: JSON.stringify({todoText: this.todoText}),
+                data: JSON.stringify({
+                    adActivityName: this.adActivityName,
+                    adEntryDate: this.adEntryDate,
+                    adEntryTime: this.adEntryTime,
+                    adActivityAmountHours: this.adActivityAmountHours,
+                    adActivityAmountMinutes: this.adActivityAmountMinutes,
+                    adMood: this.adMood,
+                }),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 success: function(dataFromServer) {
                     console.log(dataFromServer)
                     if ( dataFromServer.success ) {
                         // only clear the form after we know the submission was successful
-                        mainVm.todoText = ''
+                        mainVm.adActivityName = '',
+                        mainVm.adEntryDate = '',
+                        mainVm.adEntryTime = '',
+                        mainVm.adActivityAmountHours = '',
+                        mainVm.adActivityAmountMinutes = '',
+                        mainVm.adMood = '',
                         getFreshData()
                     }
                 }
@@ -88,8 +99,8 @@ var mainVm = new Vue({
     //     }
     // },
 
-    // created: function(){
-    //     getFreshData()
-    // }
+        created: function(){
+            getFreshData()
+        }
     }
 })
