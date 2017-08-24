@@ -1,4 +1,4 @@
-console.log('Hello world from /js/food.js');
+console.log('Hello world from /js/food.js')
 
 var getFreshData = function(){
     $.get('/fooditem', function(dataFromServer){
@@ -61,49 +61,7 @@ var mainFoodVm = new Vue({
                     }
                     console.log('doing the thing')
                 }
-            });
+            })
         },
-        // markDone: function(todo){
-        //     console.log(todo)
-        //
-        //     $.ajax({
-        //         url: '/todo/done',
-        //         type: 'POST',
-        //         data: JSON.stringify(todo),
-        //         contentType: 'application/json; charset=utf-8',
-        //         dataType: 'json',
-        //         success: function(dataFromServer) {
-        //             console.log(dataFromServer)
-        //             if ( dataFromServer.success ) {
-        //                 // only clear the form after we know the submission was successful
-        //                 getFreshData()
-        //             }
-        //         }
-        //     });
-        // },
-    //     deleteTodo: function(todo, event){
-    //         // $.delete() // this function does not exist in jQuery
-    //         event.stopPropagation()
-    //         $.ajax({
-    //             url: `/todo/${todo._id}`,
-    //             type: 'DELETE',
-    //
-    //             // we can't attach a body to a DELETE request.
-    //             // we'll need to add the data to the URL somehow
-    //             // data: JSON.stringify(todo),
-    //             contentType: 'application/json; charset=utf-8',
-    //             dataType: 'json',
-    //             success: function(dataFromServer) {
-    //                 console.log(dataFromServer)
-    //                 if ( dataFromServer.success ) {
-    //                     // only clear the form after we know the submission was successful
-    //                     getFreshData()
-    //                 }
-    //             }
-    //         });
-    //     }
-    // },
-
-
     }
 })

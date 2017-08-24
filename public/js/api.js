@@ -16,10 +16,11 @@ $(document).ready(function(){
             $("#foodSearchResultContainer").empty()
             $("#foodSearchResultContainer").append(`
                 <h4>Food Name:</h4>
-                <p>${data.hits[0].fields.item_name}</p>
+                <b>${data.hits[0].fields.item_name}</b>
                 <h4>Calories:</h4>
-                <p>${data.hits[0].fields.nf_calories}</p>
+                <b>${data.hits[0].fields.nf_calories}</b>
                 <h3>If this searches matches what you ate, please proceed by filling out the form below:</h3>
+                <hr>
                 `);
         })
     })
