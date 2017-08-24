@@ -12,34 +12,29 @@ var vmHeight = ''
 var vmName = ''
 var vmWeight = ''
 var vmUserId = ''
+var getUserResponse = ''
 
-var getUserInformation = function(userId){
-  $.get('/userInformation',{userId:userId},function(dataFromServer){
-    mainVM.userInformation = dataFromServer
-    console.log("userInformation from Server", mainVM.userInformation)
-    console.log("Age ", dataFromServer.uiAge)
-    console.log("Gender ", dataFromServer.uiGender)
-    console.log("Height ", dataFromServer.uiHeight)
-    console.log("Name ", dataFromServer.uiName)
-    console.log("Weight ", dataFromServer.uiWeight)
-    console.log("userId ", dataFromServer.userId)
-
+var getUserInformation = function (userId) {
+  $.get('/userInformation', { userId: userId }, function (dataFromServer) {
+    console.log("dataFromServer : ", dataFromServer)
+    buildProfileInput(dataFromServer)
   })
+
 }
 
 var mainVM = new Vue({
   el: '#app',
-  data : {
-    userId : '',
-    uiName : '',
-    uiAge : '',
-    uiGender : '',
-    uiWeight : '',
-    uiHeight : '',
-    userInformation :[],
+  data: {
+    userId: '',
+    uiName: '',
+    uiAge: '',
+    uiGender: '',
+    uiWeight: '',
+    uiHeight: '',
+    userInformation: [],
   },
-  methods : {
-    createUserInformation : function(event){
+  methods: {
+    createUserInformation: function (event) {
       event.preventDefault()
       // inside of a vue method, we can use `this` to access any data or method on that VM.
       // always send an object when using AJAX
@@ -56,20 +51,20 @@ var mainVM = new Vue({
         }),
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
-        success: function(dataFromServer) {
+        success: function (dataFromServer) {
           console.log(dataFromServer)
           if (dataFromServer.success) {
             // clear the form upon success
             mainVM.uiAge = '',
-            mainVM.uiGender = '',
-            mainVM.uiWeight = '',
-            mainVM.uiHeight = '',
-            cosole,log("userInformation inserted !")
+              mainVM.uiGender = '',
+              mainVM.uiWeight = '',
+              mainVM.uiHeight = '',
+              cosole, log("userInformation inserted !")
           }
         }
       });
     },
-    updateUserInformation : function(userInformation){
+    updateUserInformation: function (userInformation) {
       console.log(userInformation)
       $.ajax({
         url: '/userInformation/update',
@@ -77,14 +72,14 @@ var mainVM = new Vue({
         data: JSON.stringify(userInformation),
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
-        success: function(dataFromServer) {
+        success: function (dataFromServer) {
           console.log(dataFromServer)
           if (dataFromServer.success) {
             console.log("userInformation updated !")
           }
         }
       })
-    }    
+    }
   }
 })
 
@@ -125,7 +120,7 @@ function testAPI() {
   FB.api('/me?fields=name,email', function (response) {
     if (response && !response.error) {
       buildProfile(response);
-      buildProfileInput(response)
+      getUserInformation(response.id);
     }
   })
 }
@@ -142,40 +137,67 @@ function buildProfile(user) {
   document.getElementById('profile').innerHTML = profile;
 }
 
-function buildProfileInput(user) {
-    // console.log("USERID being passed", user.id)
-    getUserInformation(user.id)
-    
+function buildProfileInput(dataFromUserCall) {
+  console.log("dataFromUserCall", dataFromUserCall.uiName)
+
+  // if all data fields in dataFromUserCall are populated create a welcome message with links to activity and food entry pages
+
+  if (
+    (dataFromUserCall !== "") &&
+    (dataFromUserCall.userId !== "") &&
+    (dataFromUserCall.uiName !== "") &&
+    (dataFromUserCall.uiAge !== "") &&
+    (dataFromUserCall.uiGender !== "") &&
+    (dataFromUserCall.uiHeight !== "") &&
+    (dataFromUserCall.uiWeight !== "")
+  ) {
     let userInputForm = `
-    <form>
-    <div class="form-group">
-        <h2>Please tell us a little about yourself ${user.name}</h2>
-        <h3>Gender:</h3>
-        <select class="form-control">
-            <option>Male</option>
-            <option>Female</option>
-        </select>
-        <h3>Age:</h3>
-        <input type="number" min="1" class="form-control" placeholder="Age in years">
-        <h3>Height:</h3>
-        <div class="row">
-            <div class="col-md-6">
-                <input type="number" min="1" class="form-control" placeholder="Feet">
-            </div>
-            <div class="col-md-6">
-                <input type="number" min="1" class="form-control" placeholder="Inches">
-            </div>
-        </div>
-        <h3>Weight:</h3>
-        <input type="number" min="1" class="form-control" placeholder="Weight in lbs">
-        <br><br>
-        <button type="button" class="form-control btn btn-primary">
-            RECORD MY INFO
-        </button>
-    </div>
-    </form>
+    <h2>Hello ${dataFromUserCall.uiName}</h2>
+    <h3>Here is your profile...</h3>
+    <p>Age : ${dataFromUserCall.uiAge}</p
+    <p>Gender : ${dataFromUserCall.uiGender}</p>
+    <p>Height : ${dataFromUserCall.uiHeight}</p>
+    <p>Weight : ${dataFromUserCall.uiWeight}</p>
+    <h3>Options...</h3>
+     <ul>
+       <li><a href="/food-data">Food Data Entry</a></li>
+       <li><a href="/exercise-data">Exercise Data Entry</a></li>
+       <li><a href="/check-progress">Check Progress</a></li>
+     </ul>
     `;
     document.getElementById('user-input-area').innerHTML = userInputForm;
+  } else {
+    let userInputForm = `
+      <form>
+      <div class="form-group">
+          <h2>Please tell us a little about yourself.</h2>
+          <h3>Gender:</h3>
+          <select class="form-control">
+              <option>Male</option>
+              <option>Female</option>
+          </select>
+          <h3>Age:</h3>
+          <input type="number" min="1" class="form-control" placeholder="Age in years">
+          <h3>Height:</h3>
+          <div class="row">
+              <div class="col-md-6">
+                  <input type="number" min="1" class="form-control" placeholder="Feet">
+              </div>
+              <div class="col-md-6">
+                  <input type="number" min="1" class="form-control" placeholder="Inches">
+              </div>
+          </div>
+          <h3>Weight:</h3>
+          <input type="number" min="1" class="form-control" placeholder="Weight in lbs">
+          <br><br>
+          <button type="button" class="form-control btn btn-primary">
+              RECORD MY INFO
+          </button>
+      </div>
+      </form>
+      `;
+    document.getElementById('user-input-area').innerHTML = userInputForm;
+  }
 }
 
 function buildLoginPrompt() {
