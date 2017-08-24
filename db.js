@@ -2,15 +2,6 @@ var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost:27017/hackleberryCalorieCounterApp')
 
 var userInformationSchema = mongoose.Schema({
-    userId : {
-        type        : Number,
-        required    : true,
-        unique      : true,
-    },
-    uiName : {
-        type        : String,
-        required    : true,
-    },
     uiAge : {
         type        : Number,
     },
@@ -55,27 +46,27 @@ var foodDataEntrySchema = mongoose.Schema({
 var activityDataEntrySchema = mongoose.Schema({
     adActivityName : {
         type        : String,
-        required    : true,
+        required    : false,
     },
     adEntryDate : {
         type        : Date,
-        required    : true,
+        required    : false,
     },
     adEntryTime : {
         type        : String,
-        required    : true,
+        required    : false,
     },
     adActivityAmountHours : {
         type        : Number,
-        required    : true,
+        required    : false,
     },
     adActivityAmountMinutes : {
         type        : Number,
-        required    : true,
+        required    : false,
     },
     adMood : {
         type        : String,
-        required    : true,
+        required    : false,
     },
     adCaloriesOut : {
         type        : Number,

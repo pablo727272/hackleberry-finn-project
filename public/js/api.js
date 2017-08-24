@@ -21,11 +21,8 @@ $(document).ready(function(){
                 <h4>Serving Size:</h4>
                 <p>${data.hits[0].fields    .nf_serving_size_unit}</p>
                 `);
-            })
         })
-    console.log(searchedFoodItems)
-
-
+    })
 })
 
 
