@@ -54,6 +54,16 @@
                         <li><a href="/about">About</a></li>
                         <!-- <li><a href="/contact">Contact</a></li> -->
                     </ul>
+                    <ul class="nav navbar-nav navbar-right">
+-                        <!-- Facebook Login  -->
+-                        <li><a id="logout" href="#" onclick="logout()">Logout</a></li>
+-                        <fb:login-button
+-                            id="fb-btn"
+-                            scope="public_profile,email"
+-                            onlogin="checkLoginState();">
+-                        </fb:login-button>
+-                        <!-- Facebook Login  -->
+-                    </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav><!-- close navbar -->
