@@ -42,6 +42,6 @@ a, a:hover {
     display: none;
 }
 
-/* #user-input-area {
+.hidden {
     display: none;
-} */
+}

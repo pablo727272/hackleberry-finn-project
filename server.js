@@ -31,20 +31,35 @@ app.post('/nutritionix_api', function(req,res){
 })
 
 
-// (R)ead userInformation Doc
+// Read userInformation Doc
 app.get('/userInformation', function(req, res){
     db.UserInformationModel.findOne({"userId": req.query.userId},function(err,data){
         if(err){
-            // console.log("ERROR!",err)
             next(err)}
         else{
-            // console.log("DATA!",data)
             res.send(data)
         }
     })
 })
 
-//
+// Create userInformation Doc
+app.post('/userInformation/create', function(req, res, next){
+    console.log(req.body);
+    var newActivity = new db.UserInformationModel({
+        userId: req.body.userId,
+        uiName: req.body.uiName,
+        uiAge: req.body.uiAge,
+        uiGender: req.body.uiGender,
+        uiWeight: req.body.uiWeight,
+        adMoouiHeightd: req.body.uiHeight,
+    })
+    newActivity.save(function(err){
+        if (err) { next(err) }
+        else {
+            res.send({success:'success!'})
+        }
+    })
+})
 // (C)reate activity items
 app.post('/activity', function(req, res, next){
     console.log(req.body);
