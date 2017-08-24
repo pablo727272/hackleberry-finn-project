@@ -28,23 +28,23 @@ var userInformationSchema = mongoose.Schema({
 var foodDataEntrySchema = mongoose.Schema({
     fdFoodName : {
         type        : String,
-        required    : true,
+        required    : false,
     },
     fdFoodQuantity : {
         type        : Number,
-        required    : true,
+        required    : false,
     },
     fdEntryDate : {
         type        : Date,
-        required    : true,
+        required    : false,
     },
     fdEntryTime : {
         type        : String,
-        required    : true,
+        required    : false,
     },
     fdMood : {
         type        : String,
-        required    : true,
+        required    : false,
     },
     fdCaloriesIn : {
         type        : Number,

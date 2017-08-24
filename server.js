@@ -1,6 +1,7 @@
 var express     = require('express')
 var app         = express()
 var bodyParser  = require('body-parser')
+var request     = require('request')
 
 var db = require('./db')
 // var UserInformationModel = require('UserInformationModel')
@@ -15,7 +16,22 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // API Routes
-// Read userInformation Doc
+// this will send the word/phrase requested to nutritionix and receive the data for that
+app.post('/nutritionix_api', function(req,res){
+  console.log('sending data to nutritionix');
+  console.log('req body name',req.body.name);
+  var foodName = req.body.name
+  request('https://api.nutritionix.com/v1_1/search/' + foodName + '?results=0:1&appId=dff4dd40&appKey=851aa2974e40e7c1871e8f6552ad99d6', function(err, response, body){
+    if (err) {console.log(err);}
+    // console.log('res',res)
+    console.log('body', body)
+    res.status(200).send(body);
+  })
+    // this is sort of like a return statement...
+})
+
+
+// (R)ead userInformation Doc
 app.get('/userInformation', function(req, res){
     db.UserInformationModel.findOne({"userId": req.query.userId},function(err,data){
         if(err){

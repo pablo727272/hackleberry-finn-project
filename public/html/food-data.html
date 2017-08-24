@@ -22,7 +22,7 @@
         <!-- bootstrap js -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <!-- custom js -->
-        <script src="/js/main.js"></script>
+        <!-- <script src="/js/main.js"></script> -->
     </head>
 
     <body>
@@ -71,15 +71,26 @@
                     <div class="col-md-6">
                         <img src="/images/food-on-board-v2.jpg" class="img-responsive">
                     </div>
+                <!-- FOOD SEARCH INPUT FORM START -->
                     <div class="col-md-6">
-                        <!-- FOOD ITEM INPUT FORM START -->
-                        <form id="searchForm" v-on:submit="createFoodItem">
+                        <form id="searchForm">
                             <div class="form-group">
                                 <h3>What did you consume?</h3>
                                 <!-- <input type="text" class="form-control" placeholder="Food/Drink item"> -->
                                 <input v-model="fdFoodName" type="text" class="form-control" id="searchBar">
                                 <br>
-                                <button type="submit" class="form-control btn btn-primary" onclick="searchValue()">Search</button>
+                                <button type="submit" class="form-control btn btn-primary">Search</button>
+                            </div>
+                        </form>
+                        <!-- FOOD SEARCH RESULTS AREA START -->
+                        <div id="foodSearchResultContainer">
+                            food search results go here
+                        </div>
+                        <!-- FOOD SEARCH RESULTS AREA END -->
+                        <!-- FOOD SEARCH INPUT FORM END -->
+                        <!-- FOOD DATA ENTRY INPUT FORM START -->
+                        <form v-on:submit="createFoodItem">
+                            <div class="form-group" class="col-md-6">
                                 <h3>How many servings?</h3>
                                 <input v-model="fdFoodQuantity" type="number" min=".5" step=".5" class="form-control" placeholder="e.g. 2.5">
                                 <h3>When did you consume it?</h3>
@@ -105,14 +116,14 @@
                                 </button>
                             </div>
                         </form>
-                        <!-- FOOD ITEM INPUT FORM END -->
+                        <!-- FOOD DATA ENTRY INPUT FORM END -->
                     </div>
                 </div>
-                <!-- FOOD ITEM AREA END -->
+            <!-- FOOD ITEM AREA END -->
 
                 <hr>
 
-                <!-- DISPLAY ACTIVITIES ON THE PAGE START -->
+                <!-- DISPLAY FOODS ON THE PAGE START -->
                 <h4>Today's Foods:</h4>
                 <ol>
                     <li v-for="item in foodItems">
@@ -124,12 +135,12 @@
                         <p>Calories: {{item.fdCaloriesIn}}</p>
                     </li>
                 </ol>
-                <!-- DISPLAY ACTIVITIES ON THE PAGE END -->
+                <!-- DISPLAY FOODS ON THE PAGE END -->
 
-                <hr>
+                <!-- <hr> -->
 
                 <!-- FOOD SEARCH RESULTS AREA START -->
-                <div class="resultContainer">food search results go here</div>
+                <!-- <div id="foodSearchResultContainer">food search results go here</div> -->
                 <!-- FOOD SEARCH RESULTS AREA END -->
 
                 <hr>
@@ -149,6 +160,8 @@
 
         <!-- activity item js - vue.js files go down here-->
         <script src="/js/food.js"></script>
+        <script src="/js/api.js"></script>
+
 
     </body>
 
