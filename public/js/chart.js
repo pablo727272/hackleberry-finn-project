@@ -32,6 +32,10 @@ new Chart(document.getElementById("line-chart-today"), {
   }
 });
 
+function adddata(){
+
+}
+
 // weekly check progress chart
 
 new Chart(document.getElementById("line-chart-this-week"), {
@@ -63,3 +67,22 @@ new Chart(document.getElementById("line-chart-this-week"), {
     }
   }
 });
+
+
+// function adddata(){
+// 	myLineChart.data.datasets[0].data[7] = 60;
+//   myLineChart.data.labels[7] = "Newly Added";
+//   myLineChart.update();
+// }
+//
+// var option = {
+// 	showLines: true
+// };
+// var myLineChart = Chart.Line(canvas,{
+// 	data:data,
+//   options:option
+// });
+
+// This corresponds with lines 80 and 81 of check-progress.html
+// input type="button" value="Add Data" onclick="adddata()">
+// to add a button c/o https://jsfiddle.net/red_stapler/u5aanta8/1/
