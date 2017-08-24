@@ -18,8 +18,7 @@ $(document).ready(function(){
                 <p>${data.hits[0].fields.item_name}</p>
                 <h4>Calories:</h4>
                 <p>${data.hits[0].fields.nf_calories}</p>
-                <h4>Serving Size:</h4>
-                <p>${data.hits[0].fields    .nf_serving_size_unit}</p>
+                <h3>If this searches matches what you ate, please proceed by filling out the form below:</h3>
                 `);
         })
     })

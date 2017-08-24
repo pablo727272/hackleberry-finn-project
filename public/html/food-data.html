@@ -41,7 +41,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="/"><img src="favicon.ico"></a>
+                        <a class="navbar-brand" href="/"><img src="/favicon"></a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -122,11 +122,11 @@
                 <hr>
 
                 <!-- DISPLAY FOODS ON THE PAGE START -->
-                <h4>Today's Foods:</h4>
+                <h4>Foods Ingested:</h4>
                 <ol>
                     <li v-for="item in foodItems">
-                        <p>Food Name: {{item.fdFoodName}}</p>
-                        <p>Quantity: {{item.fdFoodQuantity}}</p>
+                        <h4>{{item.fdFoodName}}</h4>
+                        <p>Servings: {{item.fdFoodQuantity}}</p>
                         <p>Date: {{item.fdEntryDate}}</p>
                         <p>Time: {{item.fdEntryTime}}</p>
                         <p>Mood: {{item.fdMood}}</p>
