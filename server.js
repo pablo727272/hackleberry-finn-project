@@ -21,7 +21,7 @@ app.post('/nutritionix_api', function(req,res){
   console.log('sending data to nutritionix');
   console.log('req body name',req.body.name);
   var foodName = req.body.name
-  request('https://api.nutritionix.com/v1_1/search/' + foodName + '?results=0:1&appId=dff4dd40&appKey=851aa2974e40e7c1871e8f6552ad99d6', function(err, response, body){
+  request(`https://api.nutritionix.com/v1_1/search/${foodName}?results=0:1&fields=item_name,brand_name,item_id,nf_calories&appId=dff4dd40&appKey=851aa2974e40e7c1871e8f6552ad99d6`, function(err, response, body){
     if (err) {console.log(err);}
     // console.log('res',res)
     console.log('body', body)

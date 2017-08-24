@@ -20,6 +20,11 @@ a, a:hover {
     color: #00876A;
 }
 
+li {
+    font-family: 'Shrikhand', cursive;
+    color: #00876A;
+}
+
 #fb-btn {
     margin-top: 15px;
     margin-right: 40px;
