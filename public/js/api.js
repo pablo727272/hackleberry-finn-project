@@ -13,13 +13,13 @@ $(document).ready(function(){
             // takes returned string of data from nutritionix and converts into an object
             // var food = ; // food is all of the fields objects for food name/phrase input
             console.log('food',data.hits[0].fields); // logs all of these objects from query string (in this case first hit 0:1)
+            $("#foodSearchResultContainer").empty()
             $("#foodSearchResultContainer").append(`
                 <h4>Food Name:</h4>
                 <p>${data.hits[0].fields.item_name}</p>
                 <h4>Calories:</h4>
                 <p>${data.hits[0].fields.nf_calories}</p>
-                <h4>Serving Size:</h4>
-                <p>${data.hits[0].fields    .nf_serving_size_unit}</p>
+                <h3>If this searches matches what you ate, please proceed by filling out the form below:</h3>
                 `);
         })
     })

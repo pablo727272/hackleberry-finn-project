@@ -53,13 +53,13 @@ var mainActivityVm = new Vue({
                     console.log(dataFromServer)
                     if ( dataFromServer.success ) {
                         // only clear the form after we know the submission was successful
-                        that.mainActivityVm.adActivityName = '',
-                        that.mainActivityVm.adEntryDate = '',
-                        that.mainActivityVm.adEntryTime = '',
-                        that.mainActivityVm.adActivityAmountHours = '',
-                        that.mainActivityVm.adActivityAmountMinutes = '',
-                        that.mainActivityVm.adMood = '',
-                        that.mainActivityVm.adCaloriesOut = '',
+                        mainActivityVm.adActivityName = '',
+                        mainActivityVm.adEntryDate = '',
+                        mainActivityVm.adEntryTime = '',
+                        mainActivityVm.adActivityAmountHours = '',
+                        mainActivityVm.adActivityAmountMinutes = '',
+                        mainActivityVm.adMood = '',
+                        mainActivityVm.adCaloriesOut = '',
                         getFreshData()
                     }
                 }

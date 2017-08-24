@@ -48,7 +48,7 @@ new Chart(document.getElementById("line-chart-this-week"), {
         borderColor: "green",
         fill: true
       }, {
-        data: [600,500,480,550,660,380,220],
+        data: [750,100,680,250,660,-200,-100],
         label: "Mood",
         borderColor: "blue",
         fill: true
