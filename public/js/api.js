@@ -13,6 +13,7 @@ $(document).ready(function(){
             // takes returned string of data from nutritionix and converts into an object
             // var food = ; // food is all of the fields objects for food name/phrase input
             console.log('food',data.hits[0].fields); // logs all of these objects from query string (in this case first hit 0:1)
+            $("#foodSearchResultContainer").empty()
             $("#foodSearchResultContainer").append(`
                 <h4>Food Name:</h4>
                 <p>${data.hits[0].fields.item_name}</p>
