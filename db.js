@@ -48,7 +48,7 @@ var foodDataEntrySchema = mongoose.Schema({
     },
     fdCaloriesIn : {
         type        : Number,
-        required    : true,
+        required    : false,
     },
 })
 
@@ -79,7 +79,7 @@ var activityDataEntrySchema = mongoose.Schema({
     },
     adCaloriesOut : {
         type        : Number,
-        required    : true,
+        required    : false,
     },
 })
 

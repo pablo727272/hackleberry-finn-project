@@ -32,7 +32,7 @@ app.get('/userInformation', function(req, res){
 // (C)reate activity items
 app.post('/activity', function(req, res, next){
     console.log(req.body);
-    var newActivity = new ActivityDataEntryModel({
+    var newActivity = new db.ActivityDataEntryModel({
         adActivityName: req.body.adActivityName,
         adEntryDate: req.body.adEntryDate,
         adEntryTime: req.body.adEntryTime,
@@ -50,7 +50,7 @@ app.post('/activity', function(req, res, next){
 
 // (R)ead activity items
 app.get('/activity', function(req, res, next){
-    ActivityDataEntryModel.find({}, function(err, data){
+    db.ActivityDataEntryModel.find({}, function(err, data){
         if (err) { next(err) }
         else {
             res.send(data)
@@ -60,8 +60,9 @@ app.get('/activity', function(req, res, next){
 
 // (C)reate food items
 app.post('/fooditem', function(req, res, next){
+    console.log('yoohoo somebody anybody home')
     console.log(req.body);
-    var newFoodItem = new FoodDataEntryModel({
+    var newFoodItem = new db.FoodDataEntryModel({
         fdFoodName: req.body.fdFoodName,
         fdFoodQuantity: req.body.fdFoodQuantity,
         fdEntryDate: req.body.fdEntryDate,
@@ -80,7 +81,7 @@ app.post('/fooditem', function(req, res, next){
 // (R)ead food items
 app.get('/fooditem', function(req, res, next){
     console.log('fooditem')
-    FoodDataEntryModel.find({}, function(err, data){
+    db.FoodDataEntryModel.find({}, function(err, data){
         if (err) { next(err) }
         else {
             res.send(data)

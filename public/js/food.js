@@ -47,15 +47,16 @@ var mainFoodVm = new Vue({
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 success: function(dataFromServer) {
-                    console.log(dataFromServer)
+                    var that = this;
+                    console.log(dataFromServer) 
                     if ( dataFromServer.success ) {
                         // only clear the form after we know the submission was successful
-                        mainFoodVM.fdFoodName = '',
-                        mainFoodVM.fdFoodQuantity = '',
-                        mainFoodVM.fdEntryDate = '',
-                        mainFoodVM.fdEntryTime = '',
-                        mainFoodVM.fdMood = '',
-                        mainFoodVM.fdCaloriesIn = '',
+                        that.mainFoodVM.fdFoodName = '',
+                        that.mainFoodVM.fdFoodQuantity = '',
+                        that.mainFoodVM.fdEntryDate = '',
+                        that.mainFoodVM.fdEntryTime = '',
+                        that.mainFoodVM.fdMood = '',
+                        that.mainFoodVM.fdCaloriesIn = '',
                         getFreshData()
                     }
                     console.log('doing the thing')
