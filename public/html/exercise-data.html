@@ -128,7 +128,7 @@
                 <ol>
                     <li v-for="item in activities">
                         <h4>{{item.adActivityName}}</h4>
-                        <p>Date: {{item.adEntryDate}}</p>
+                        <p>Date: {{item.adEntryDate.toDateString()}}</p>
                         <p>Time: {{item.adEntryTime}}</p>
                         <p>Hours: {{item.adActivityAmountHours}}</p>
                         <p>Minutes: {{item.adActivityAmountMinutes}}</p>

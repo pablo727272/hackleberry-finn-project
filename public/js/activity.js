@@ -3,6 +3,9 @@ console.log('Hello world from /js/activity.js');
 var getFreshData = function(){
     $.get('/activity', function(dataFromServer){
         console.log(dataFromServer)
+        for (var i=0; i<dataFromServer.length; i++) {
+            dataFromServer[i].adEntryDate = new Date(dataFromServer[i].adEntryDate)
+        }
         mainActivityVm.activities = dataFromServer
     })
 }

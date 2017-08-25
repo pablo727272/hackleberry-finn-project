@@ -3,6 +3,9 @@ console.log('Hello world from /js/food.js')
 var getFreshData = function(){
     $.get('/fooditem', function(dataFromServer){
         console.log(dataFromServer)
+        for (var i=0; i<dataFromServer.length; i++) {
+            dataFromServer[i].fdEntryDate = new Date(dataFromServer[i].fdEntryDate)
+        }
         mainFoodVm.foodItems = dataFromServer
     })
 }
