@@ -7,7 +7,15 @@ var mainVM = new Vue({
     uiGender: '',
     uiWeight: '',
     uiHeight: '',
+    uiSendHeightF: '',
+    uiSendHeightI: '',
+    isLoggedIn: false,
     userInformation: [],
+  },
+  computed: {
+    uiSendHeight : function(){
+      return (this.uiSendHeightF * 12) + this.uiSendHeightI;
+    }
   },
   created: function () {
     var vmUserId = ""
@@ -22,6 +30,7 @@ var mainVM = new Vue({
 
     // Facebook Login SDK functionality
     window.fbAsyncInit = function () {
+      console.log("STARTING")
       FB.init({
         appId: '351437898614065',
         cookie: true,
@@ -29,6 +38,7 @@ var mainVM = new Vue({
         version: 'v2.8'
       });
       FB.getLoginStatus(function (response) {
+        console.log("STARTING getLoginStatus")
         statusChangeCallback(response);
       });
     };
@@ -44,17 +54,18 @@ var mainVM = new Vue({
     function statusChangeCallback(response) {
       if (response.status === 'connected') {
         console.log('Logged in and authenticated', response.status);
-        setElements(true);
+        this.isLoggedIn = true;
         testAPI();
       } else {
         console.log('Not authenticated', response.status);
-        buildLoginPrompt();
-        setElements(false);
+        // buildLoginPrompt();
+        this.isLoggedIn = false;
       }
     }
 
     function testAPI() {
       FB.api('/me?fields=name,email', function (response) {
+        console.log("STARTING testAPI")
         if (response && !response.error) {
           buildProfile(response);
           getUserInformation(response.id);
@@ -142,41 +153,33 @@ var mainVM = new Vue({
       }
     }
 
-    function buildLoginPrompt() {
-      let loginPrompt = `
-  <h2>Please login...</h2>
-`;
-      document.getElementById('user-input-area').innerHTML = loginPrompt;
-    }
+//     function buildLoginPrompt() {
+//       let loginPrompt = `
+//   <h2>Please login...</h2>
+// `;
+//       console.log(document.getElementById('user-input-area'))
+//       document.getElementById('user-input-area').innerHTML = loginPrompt;
+//     }
 
+    // function setElements(isLoggedIn) {
+    //   if (isLoggedIn) {
+    //     document.getElementById('logout').style.display = 'block';
+    //     document.getElementById('profile').style.display = 'block';
+    //     document.getElementById('fb-btn').style.display = 'none';
+    //     document.getElementById('heading').style.display = 'none';
+    //   } else {
+    //     document.getElementById('logout').style.display = 'none';
+    //     document.getElementById('profile').style.display = 'none';
+    //     document.getElementById('fb-btn').style.display = 'block';
+    //     document.getElementById('heading').style.display = 'block';
+    //   }
+    // }
+    // checkLoginState is in both Created and Methods so FB SDK can find in Created
     function checkLoginState() {
       FB.getLoginStatus(function (response) {
         statusChangeCallback(response);
       });
     }
-
-    function setElements(isLoggedIn) {
-      if (isLoggedIn) {
-        document.getElementById('logout').style.display = 'block';
-        document.getElementById('profile').style.display = 'block';
-        document.getElementById('fb-btn').style.display = 'none';
-        document.getElementById('heading').style.display = 'none';
-      } else {
-        document.getElementById('logout').style.display = 'none';
-        document.getElementById('profile').style.display = 'none';
-        document.getElementById('fb-btn').style.display = 'block';
-        document.getElementById('heading').style.display = 'block';
-      }
-    }
-
-    function logout() {
-      FB.logout(function (response) {
-        buildLoginPrompt();
-        setElements(false);
-      });
-    }
-
-
   },
   methods: {
     createUserInformation: function (event) {
@@ -225,6 +228,21 @@ var mainVM = new Vue({
           }
         }
       })
+    },
+    logout: function() {
+      FB.logout((response) => {
+        // buildLoginPrompt();
+        console.log(this)
+        this.isLoggedIn = false;
+        location.reload()
+      });
+    },
+    checkLoginState: function () {
+      FB.getLoginStatus(function (response) {
+        statusChangeCallback(response);
+      });
     }
   }
 })
+
+Vue.config.ignoredElements = ['fb:login-button']

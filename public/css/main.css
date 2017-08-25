@@ -35,16 +35,13 @@ li {
     margin-right: 40px;
 }
 
-#logout {
-    margin-right: 40px;
-}
-
 #profile {
     display: none;
 }
 
 #logout {
-    display: none;
+    display: block;
+    margin-right: 40px;
 }
 
 .hidden {
