@@ -18,6 +18,13 @@ var mainActivityVm = new Vue({
         adMood : '',
         adCaloriesOut : '',
         activities : [],
+        burnRates : {
+            'Running/Jogging' : 10,
+            'Weightlifting' : 4,
+            'Walking' : 7,
+            'Cycling/Mountain Biking' : 13,
+            'Sleeping/Napping' : 1
+        }
     },
     created : function(){
         getFreshData()
@@ -34,6 +41,17 @@ var mainActivityVm = new Vue({
             console.log('activity minutes',this.adActivityAmountMinutes)
             console.log('activity mood',this.adMood)
             console.log('activity calories out',this.adCaloriesOut)
+            // console.log(typeof this.adActivityAmountMinutes);
+            // console.log(typeof this.adActivityAmountHours);
+            // set totalMinutes equal to the minutes input by the user
+            var totalMinutes = +this.adActivityAmountMinutes
+            console.log('total minutes just minutes',totalMinutes)
+            // convert totalMinutes to Number using + and set equal to the minutes input by the user added to the hours input * 60
+            totalMinutes += +this.adActivityAmountHours * 60
+            console.log('total minutes + hours x 60',totalMinutes)
+            // set totalMinutes equal to the totalMinutes * by chosen activity burnRates
+            totalMinutes *= this.burnRates[this.adActivityName]
+            console.log('total minutes x activity chosen',totalMinutes);
 
             $.ajax({
                 url: '/activity',
@@ -45,7 +63,7 @@ var mainActivityVm = new Vue({
                     adActivityAmountHours: this.adActivityAmountHours,
                     adActivityAmountMinutes: this.adActivityAmountMinutes,
                     adMood: this.adMood,
-                    adCaloriesOut: this.adCaloriesOut,
+                    adCaloriesOut: totalMinutes,
                 }),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
@@ -53,59 +71,17 @@ var mainActivityVm = new Vue({
                     console.log(dataFromServer)
                     if ( dataFromServer.success ) {
                         // only clear the form after we know the submission was successful
-                        mainActivityVm.adActivityName = '',
-                        mainActivityVm.adEntryDate = '',
-                        mainActivityVm.adEntryTime = '',
-                        mainActivityVm.adActivityAmountHours = '',
-                        mainActivityVm.adActivityAmountMinutes = '',
-                        mainActivityVm.adMood = '',
-                        mainActivityVm.adCaloriesOut = '',
                         getFreshData()
                     }
                 }
             });
-        },
-        // markDone: function(todo){
-        //     console.log(todo)
-        //
-        //     $.ajax({
-        //         url: '/todo/done',
-        //         type: 'POST',
-        //         data: JSON.stringify(todo),
-        //         contentType: 'application/json; charset=utf-8',
-        //         dataType: 'json',
-        //         success: function(dataFromServer) {
-        //             console.log(dataFromServer)
-        //             if ( dataFromServer.success ) {
-        //                 // only clear the form after we know the submission was successful
-        //                 getFreshData()
-        //             }
-        //         }
-        //     });
-        // },
-    //     deleteTodo: function(todo, event){
-    //         // $.delete() // this function does not exist in jQuery
-    //         event.stopPropagation()
-    //         $.ajax({
-    //             url: `/todo/${todo._id}`,
-    //             type: 'DELETE',
-    //
-    //             // we can't attach a body to a DELETE request.
-    //             // we'll need to add the data to the URL somehow
-    //             // data: JSON.stringify(todo),
-    //             contentType: 'application/json; charset=utf-8',
-    //             dataType: 'json',
-    //             success: function(dataFromServer) {
-    //                 console.log(dataFromServer)
-    //                 if ( dataFromServer.success ) {
-    //                     // only clear the form after we know the submission was successful
-    //                     getFreshData()
-    //                 }
-    //             }
-    //         });
-    //     }
-    // },
-
-
+            // after ajax request, clear out the form fields in the DOM
+            this.adActivityName = ''
+            this.adEntryDate = ''
+            this.adEntryTime = ''
+            this.adActivityAmountHours = ''
+            this.adActivityAmountMinutes = ''
+            this.adMood = ''
+        }
     }
 })

@@ -71,6 +71,7 @@ app.post('/activity', function(req, res, next){
         adActivityAmountHours: req.body.adActivityAmountHours,
         adActivityAmountMinutes: req.body.adActivityAmountMinutes,
         adMood: req.body.adMood,
+        adCaloriesOut: req.body.adCaloriesOut
     })
     newActivity.save(function(err){
         if (err) { next(err) }

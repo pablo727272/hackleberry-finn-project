@@ -32,6 +32,8 @@ var mainFoodVm = new Vue({
             console.log('food time',this.fdEntryTime)
             console.log('food mood',this.fdMood)
             console.log('food calories in',this.fdCaloriesIn)
+            var totalCalories = +this.fdFoodQuantity * +this.fdCaloriesIn
+            console.log('total calories should be servings * calories',totalCalories);
 
             $.ajax({
                 url: '/fooditem',
@@ -42,7 +44,7 @@ var mainFoodVm = new Vue({
                     fdEntryDate: this.fdEntryDate,
                     fdEntryTime: this.fdEntryTime,
                     fdMood: this.fdMood,
-                    fdCaloriesIn: this.fdCaloriesIn,
+                    fdCaloriesIn: totalCalories,
                 }),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
@@ -51,17 +53,18 @@ var mainFoodVm = new Vue({
                     console.log(dataFromServer)
                     if ( dataFromServer.success ) {
                         // only clear the form after we know the submission was successful
-                        mainFoodVM.fdFoodName = '',
-                        mainFoodVM.fdFoodQuantity = '',
-                        mainFoodVM.fdEntryDate = '',
-                        mainFoodVM.fdEntryTime = '',
-                        mainFoodVM.fdMood = '',
-                        mainFoodVM.fdCaloriesIn = '',
                         getFreshData()
                     }
-                    console.log('doing the thing')
                 }
             })
-        },
+            // after ajax request, clear out the form fields in the DOM
+            this.fdFoodName = ''
+            this.fdFoodQuantity = ''
+            this.fdEntryDate = ''
+            this.fdEntryTime = ''
+            this.fdMood = ''
+            this.fdCaloriesIn = ''
+            console.log('doing the thing')
+        }
     }
 })
