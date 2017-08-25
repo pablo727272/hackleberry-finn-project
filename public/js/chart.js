@@ -27,7 +27,7 @@ new Chart(document.getElementById("line-chart-today"), {
   options: {
     title: {
       display: true,
-      text: 'Calories Ingested, Calories Burned, and Mood for each: Daily'
+      text: 'Calories Ingested, Calories Burned, and Mood: Daily'
     }
   }
 });
@@ -63,7 +63,7 @@ new Chart(document.getElementById("line-chart-this-week"), {
   options: {
     title: {
       display: true,
-      text: 'Calories Ingested, Calories Burned, and Mood for each: Weekly Average'
+      text: 'Calories Ingested, Calories Burned, and Mood: Weekly Average'
     }
   }
 });
