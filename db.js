@@ -29,6 +29,10 @@ var foodDataEntrySchema = mongoose.Schema({
         type        : String,
         required    : false,
     },
+    fdBrandName : {
+        type        : String,
+        required    : false,
+    },
     fdFoodQuantity : {
         type        : Number,
         required    : false,

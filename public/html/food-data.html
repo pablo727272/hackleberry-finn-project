@@ -122,17 +122,20 @@
                 <hr>
 
                 <!-- DISPLAY FOODS ON THE PAGE START -->
-                <h4>Foods Ingested:</h4>
-                <ol>
-                    <li v-for="item in foodItems">
-                        <h4>{{item.fdFoodName}}</h4>
-                        <p>Servings: {{item.fdFoodQuantity}}</p>
-                        <p>Date: {{item.fdEntryDate}}</p>
-                        <p>Time: {{item.fdEntryTime}}</p>
-                        <p>Mood: {{item.fdMood}}</p>
-                        <p>Calories: {{item.fdCaloriesIn}}</p>
-                    </li>
-                </ol>
+                <div id="displayFoods">
+                    <h4>Foods Ingested:</h4>
+                    <ol>
+                        <li v-for="item in foodItems">
+                            <h4>{{item.fdFoodName}}</h4>
+                            <p>Brand: {{item.fdBrandName}}</p>
+                            <p>Servings: {{item.fdFoodQuantity}}</p>
+                            <p>Date: {{item.fdEntryDate}}</p>
+                            <p>Time: {{item.fdEntryTime}}</p>
+                            <p>Mood: {{item.fdMood}}</p>
+                            <p>Calories: {{item.fdCaloriesIn}}</p>
+                        </li>
+                    </ol>
+                </div>
                 <!-- DISPLAY FOODS ON THE PAGE END -->
 
                 <!-- <hr> -->

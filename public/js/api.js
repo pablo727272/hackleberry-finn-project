@@ -17,12 +17,15 @@ $(document).ready(function(){
             $("#foodSearchResultContainer").append(`
                 <h4>Food Name:</h4>
                 <b>${data.hits[0].fields.item_name}</b>
+                <h4>Brand:</h4>
+                <b>${data.hits[0].fields.brand_name}</b>
                 <h4>Calories:</h4>
                 <b>${data.hits[0].fields.nf_calories}</b>
-                <h3>If this searches matches what you ate, please proceed by filling out the form below:</h3>
+                <h3>If this searches matches what you consumed, please proceed by filling out the form below:</h3>
                 <hr>
                 `);
             mainFoodVm.fdFoodName = data.hits[0].fields.item_name
+            mainFoodVm.fdBrandName = data.hits[0].fields.brand_name
             mainFoodVm.fdCaloriesIn = data.hits[0].fields.nf_calories
         })
     })

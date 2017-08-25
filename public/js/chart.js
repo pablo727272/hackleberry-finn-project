@@ -32,9 +32,9 @@ new Chart(document.getElementById("line-chart-today"), {
   }
 });
 
-function adddata(){
-
-}
+// function adddata(){
+//
+// }
 
 // weekly check progress chart
 

@@ -70,7 +70,7 @@ app.post('/activity', function(req, res, next){
         adActivityAmountHours: req.body.adActivityAmountHours,
         adActivityAmountMinutes: req.body.adActivityAmountMinutes,
         adMood: req.body.adMood,
-        adCaloriesOut: req.body.adCaloriesOut
+        adCaloriesOut: req.body.adCaloriesOut.toFixed()
     })
     newActivity.save(function(err){
         if (err) { next(err) }
@@ -96,11 +96,12 @@ app.post('/fooditem', function(req, res, next){
     console.log(req.body);
     var newFoodItem = new db.FoodDataEntryModel({
         fdFoodName: req.body.fdFoodName,
+        fdBrandName: req.body.fdBrandName,
         fdFoodQuantity: req.body.fdFoodQuantity,
         fdEntryDate: req.body.fdEntryDate,
         fdEntryTime: req.body.fdEntryTime,
         fdMood: req.body.fdMood,
-        fdCaloriesIn: req.body.fdCaloriesIn,
+        fdCaloriesIn: req.body.fdCaloriesIn.toFixed(),
     })
     newFoodItem.save(function(err){
         if (err) { next(err) }
