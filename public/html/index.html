@@ -59,10 +59,10 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Facebook Login  -->
                         <li>
-                            <a id="logout" v-if="isLoggedIn" v-on:click="logout()">Logout</a>
+                            <a id="logout" onclick="logout()">Logout</a>
                         </li>
                         <li>
-                            <fb:login-button v-if="!isLoggedIn" id="fb-btn" scope="public_profile,email" onlogin="checkLoginState();">
+                            <fb:login-button id="fb-btn" scope="public_profile, email" onlogin="checkLoginState();">
                             </fb:login-button>
                         </li>
                         <!-- Facebook Login  -->
@@ -76,7 +76,7 @@
         <!-- NAVBAR END -->
 
         <div class="container">
-            <h3 id="heading" v-if="!isLoggedIn">Log in to view your profile</h3>
+            <h3 id="heading">Log in to view your profile</h3>
             <div id="profile"></div>
         </div>
 
@@ -100,40 +100,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <!-- USER DATA INPUT FORM START -->
-                    <div v-if="!isLoggedIn" id="user-input-area">
-                        <h2>Please login...</h2>
-                    </div>
-                    <div v-else id="user-input-area">
-                            <form v-on:submit="createUserInformation">
-                                    <div class="form-group">
-                                        <h2>Please tell us a little about yourself.</h2>
-                                        <input v-model="userId" class="form-control hidden" value="${vmUserId}">
-                                        <input v-model="uiName" class="form-control hidden" value="${vmUserName}">
-                                        <h3>Gender:</h3>
-                                        <select v-model="uiGender" class="form-control">
-                                            <option>Male</option>
-                                            <option>Female</option>
-                                        </select>
-                                        <h3>Age:</h3>
-                                        <input v-model="uiAge" type="number" min="1" class="form-control" placeholder="Age in years">
-                                        <h3>Height:</h3>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <input v-model="uiSendHeightF" type="number" min="1" class="form-control" placeholder="Feet">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <input v-model="uiSendHeightI" type="number" min="1" class="form-control" placeholder="Inches">
-                                            </div>
-                                        </div>
-                                        <h3>Weight:</h3>
-                                        <input v-model="uiWeight" type="number" min="1" class="form-control" placeholder="Weight in lbs">
-                                        <br><br>
-                                        <button type="submit" class="form-control btn btn-primary">
-                                            RECORD MY INFO
-                                        </button>
-                                    </div>
-                                    </form>
-                    </div>
+                    <div id="user-input-area"></div>
                     <!-- USER DATA INPUT FORM END -->
                 </div>
                 <div class="col-md-6">
@@ -159,24 +126,6 @@
     <!-- end vue app -->
     <!-- custom js -->
     <script src="/js/main.js"></script>
-    <script>
-        function checkLoginState() {
-      FB.getLoginStatus(function (response) {
-        statusChangeCallback(response);
-      });
-    }
-
-    function statusChangeCallback(response) {
-      if (response.status === 'connected') {
-        console.log('Logged in and authenticated', response.status);
-        mainVM.isLoggedIn = true;
-      } else {
-        console.log('Not authenticated', response.status);
-        buildLoginPrompt();
-        mainVM.isLoggedIn = false;
-      }
-    }
-    </script>
 </body>
 
 </html>
