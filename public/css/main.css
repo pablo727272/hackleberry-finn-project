@@ -25,6 +25,10 @@ a, a:hover {
     color: #00876A;
 }*/
 
+#displayFoods {
+    font-size: 1.2em;
+}
+
 #fb-btn {
     margin-top: 15px;
     margin-right: 40px;

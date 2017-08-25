@@ -12,6 +12,7 @@ var mainActivityVm = new Vue({
     data : {
         adActivityName : '',
         adEntryDate : '',
+        // adEntryDate : new Date(),
         adEntryTime : '',
         adActivityAmountHours : '',
         adActivityAmountMinutes : '',
@@ -59,6 +60,7 @@ var mainActivityVm = new Vue({
                 data: JSON.stringify({
                     adActivityName: this.adActivityName,
                     adEntryDate: this.adEntryDate,
+                    // adEntryDate: new Date(),
                     adEntryTime: this.adEntryTime,
                     adActivityAmountHours: this.adActivityAmountHours,
                     adActivityAmountMinutes: this.adActivityAmountMinutes,

@@ -11,8 +11,10 @@ var mainFoodVm = new Vue({
     el: '#appFoodItem',
     data : {
         fdFoodName : '',
+        fdBrandName : '',
         fdFoodQuantity : '',
         fdEntryDate : '',
+        // fdEntryDate : new Date(),
         fdEntryTime : '',
         fdMood : '',
         fdCaloriesIn : '',
@@ -27,6 +29,7 @@ var mainFoodVm = new Vue({
             // inside of a vue method, we can use `this` to access any data or method on that VM.
             // always send an object when using AJAX
             console.log('food name',this.fdFoodName)
+            console.log('food brand',this.fdBrandName);
             console.log('food quantity',this.fdFoodQuantity)
             console.log('food date',this.fdEntryDate)
             console.log('food time',this.fdEntryTime)
@@ -40,8 +43,10 @@ var mainFoodVm = new Vue({
                 type: 'POST',
                 data: JSON.stringify({
                     fdFoodName: this.fdFoodName,
+                    fdBrandName: this.fdBrandName,
                     fdFoodQuantity: this.fdFoodQuantity,
                     fdEntryDate: this.fdEntryDate,
+                    // fdEntryDate: new Date(),
                     fdEntryTime: this.fdEntryTime,
                     fdMood: this.fdMood,
                     fdCaloriesIn: totalCalories,
@@ -59,6 +64,7 @@ var mainFoodVm = new Vue({
             })
             // after ajax request, clear out the form fields in the DOM
             this.fdFoodName = ''
+            this.fdBrandName = ''
             this.fdFoodQuantity = ''
             this.fdEntryDate = ''
             this.fdEntryTime = ''

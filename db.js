@@ -32,9 +32,19 @@ var foodDataEntrySchema = mongoose.Schema({
         type: String,
         required: false,
     },
+<<<<<<< HEAD
+    fdBrandName : {
+        type        : String,
+        required    : false,
+    },
+    fdFoodQuantity : {
+        type        : Number,
+        required    : false,
+=======
     fdFoodQuantity: {
         type: Number,
         required: false,
+>>>>>>> d6f846105a8275bb1156609f88d915bbef61dc30
     },
     fdEntryDate: {
         type: Date,
