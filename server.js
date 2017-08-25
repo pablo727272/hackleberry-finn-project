@@ -43,20 +43,21 @@ app.get('/userInformation', function(req, res){
 })
 
 // Create userInformation Doc
-app.post('/userInformation/create', function(req, res, next){
-    console.log(req.body);
-    var newActivity = new db.UserInformationModel({
+app.post('/user_information/create', function(req, res, next){
+    console.log("FROM SERVER", req.body);
+    var newUserInformation = new db.UserInformationModel({
         userId: req.body.userId,
         uiName: req.body.uiName,
         uiAge: req.body.uiAge,
         uiGender: req.body.uiGender,
         uiWeight: req.body.uiWeight,
-        adMoouiHeightd: req.body.uiHeight,
+        uiHeightF: req.body.uiHeightF,
+        uiHeightI: req.body.uiHeightI
     })
-    newActivity.save(function(err){
+    newUserInformation.save(function(err,newUser){
         if (err) { next(err) }
         else {
-            res.send({success:'success!'})
+            res.send(newUser)
         }
     })
 })
