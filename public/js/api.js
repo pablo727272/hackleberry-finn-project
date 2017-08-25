@@ -22,6 +22,8 @@ $(document).ready(function(){
                 <h3>If this searches matches what you ate, please proceed by filling out the form below:</h3>
                 <hr>
                 `);
+            mainFoodVm.fdFoodName = data.hits[0].fields.item_name
+            mainFoodVm.fdCaloriesIn = data.hits[0].fields.nf_calories
         })
     })
 })
