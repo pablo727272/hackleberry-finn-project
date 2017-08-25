@@ -2,33 +2,37 @@ var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost:27017/hackleberryCalorieCounterApp')
 
 var userInformationSchema = mongoose.Schema({
-    userId : {
-        type        : Number,
-        required    : true,
-        unique      : true,
+    userId: {
+        type: Number,
+        required: true,
+        unique: true,
     },
-    uiName : {
-        type        : String,
+    uiName: {
+        type: String,
     },
-    uiAge : {
-        type        : Number,
+    uiAge: {
+        type: Number,
     },
-    uiGender : {
-        type        : String,
+    uiGender: {
+        type: String,
     },
-    uiWeight : {
-        type        : Number,
+    uiWeight: {
+        type: Number,
     },
-    uiHeight : {
-        type        : Number,
-    }
-})
+    uiHeightF: {
+        type: Number,
+    },
+    uiHeightI: {
+        type: Number
+        }
+    })
 
 var foodDataEntrySchema = mongoose.Schema({
-    fdFoodName : {
-        type        : String,
-        required    : false,
+    fdFoodName: {
+        type: String,
+        required: false,
     },
+<<<<<<< HEAD
     fdBrandName : {
         type        : String,
         required    : false,
@@ -36,53 +40,58 @@ var foodDataEntrySchema = mongoose.Schema({
     fdFoodQuantity : {
         type        : Number,
         required    : false,
+=======
+    fdFoodQuantity: {
+        type: Number,
+        required: false,
+>>>>>>> d6f846105a8275bb1156609f88d915bbef61dc30
     },
-    fdEntryDate : {
-        type        : Date,
-        required    : false,
+    fdEntryDate: {
+        type: Date,
+        required: false,
     },
-    fdEntryTime : {
-        type        : String,
-        required    : false,
+    fdEntryTime: {
+        type: String,
+        required: false,
     },
-    fdMood : {
-        type        : String,
-        required    : false,
+    fdMood: {
+        type: String,
+        required: false,
     },
-    fdCaloriesIn : {
-        type        : Number,
-        required    : false,
+    fdCaloriesIn: {
+        type: Number,
+        required: false,
     },
 })
 
 var activityDataEntrySchema = mongoose.Schema({
-    adActivityName : {
-        type        : String,
-        required    : false,
+    adActivityName: {
+        type: String,
+        required: false,
     },
-    adEntryDate : {
-        type        : Date,
-        required    : false,
+    adEntryDate: {
+        type: Date,
+        required: false,
     },
-    adEntryTime : {
-        type        : String,
-        required    : false,
+    adEntryTime: {
+        type: String,
+        required: false,
     },
-    adActivityAmountHours : {
-        type        : Number,
-        required    : false,
+    adActivityAmountHours: {
+        type: Number,
+        required: false,
     },
-    adActivityAmountMinutes : {
-        type        : Number,
-        required    : false,
+    adActivityAmountMinutes: {
+        type: Number,
+        required: false,
     },
-    adMood : {
-        type        : String,
-        required    : false,
+    adMood: {
+        type: String,
+        required: false,
     },
-    adCaloriesOut : {
-        type        : Number,
-        required    : false,
+    adCaloriesOut: {
+        type: Number,
+        required: false,
     },
 })
 
