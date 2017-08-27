@@ -21,7 +21,7 @@ $(document).ready(function(){
                 <b>${data.hits[0].fields.brand_name}</b>
                 <h4>Calories:</h4>
                 <b>${data.hits[0].fields.nf_calories}</b>
-                <h3>If this searches matches what you consumed, please proceed by filling out the form below:</h3>
+                <h3>If this search matches what you consumed, please proceed by filling out the form below:</h3>
                 <hr>
                 `);
             mainFoodVm.fdFoodName = data.hits[0].fields.item_name
